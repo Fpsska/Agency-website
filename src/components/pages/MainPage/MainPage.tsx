@@ -18,7 +18,7 @@ const MainPage: React.FC = () => {
                         <nav className="gallery__nav nav">
                             <ul className="nav__menu">
                                 <li className="nav__item">
-                                    <a className="nav__link" href="#">Show All</a>
+                                    <a className="nav__link active" href="#">Show All</a>
                                 </li>
                                 <li className="nav__item">
                                     <a className="nav__link" href="#">Design</a>
@@ -35,10 +35,18 @@ const MainPage: React.FC = () => {
                             </ul>
                         </nav>
 
-                        <Gallery/>
+                        <select className="gallery__select select" name="" id="" defaultValue="Show All">
+                            <option className="select__item" value="">Show All</option>
+                            <option className="select__item" value="">Design</option>
+                            <option className="select__item" value="">Branding</option>
+                            <option className="select__item" value="">illustration</option>
+                            <option className="select__item" value="">Motion</option>
+                        </select>
+
+                        <Gallery />
 
                         <button className="gallery__button">Load More</button>
-                        
+
                     </div>
 
                 </div>
