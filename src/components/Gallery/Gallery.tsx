@@ -18,12 +18,12 @@ const Gallery: React.FC = () => {
                 return (
                     <GalleryTemplate
                     key={item.id}
-                    tag={item.tag}
+                    category={item.category}
                     text={item.text}
                     image={item.image}
                     isActive={item.isActive}
                     />
-                )
+                );
             })}
         </div>
     );

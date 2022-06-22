@@ -14,6 +14,9 @@
     .gallery__photos {
         grid-template-columns: 1fr 1fr;
     }
+    .card__name {
+        width: calc(422px - 80px);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -38,6 +41,9 @@
     .gallery__select {
         display: block;
     }
+    .card__name {
+        width: calc(618px - 80px);
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -49,5 +55,11 @@
     }
     .gallery__wrapper {
         padding: 0 0 70px 0;
+    }
+    .card__information {
+        margin: 10px 10px 45px 20px;
+    }
+    .card__name {
+        width: calc(375px - 80px);
     }
 }

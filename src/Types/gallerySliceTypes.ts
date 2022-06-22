@@ -1,6 +1,6 @@
 export interface galleryCardsTypes {
-    id: number,
-    tag: string,
+    id: string,
+    category: string,
     text: string,
     image: string,
     isActive: boolean

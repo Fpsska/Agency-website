@@ -71,6 +71,10 @@
     &__name {
         font-size: 40px;
         font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: calc(415px - 20px);
     }
 }
 
