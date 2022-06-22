@@ -1,9 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
+import gallerySlice from './slices/gallerySlice';
+
 // /. imports
 
 export const store = configureStore({
   reducer: {
+    gallerySlice: gallerySlice
   }
 });
 
