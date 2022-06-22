@@ -2,15 +2,19 @@ import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { galleryCardsTypes } from '../../Types/gallerySliceTypes';
 
+import { getRandomCategory } from '../../helpers/getRandomCategory';
+
 // /. imports
 
 export const fetchImagesData = createAsyncThunk(
     'tableSlice/fetchUsersData',
     async (_, { rejectWithValue }) => {
-        try {
-            const response = await
-                fetch('https://api.unsplash.com/search/photos/?client_id=7qBZMJtsb638mTv6UpQozhM0hW0dTxCWY-vSSvcJAHQ&query=content_filter=high&orientation=portrait');
 
+        const pageNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+        const URL = `https://api.unsplash.com/search/photos/?client_id=7qBZMJtsb638mTv6UpQozhM0hW0dTxCWY-vSSvcJAHQ&query=content_filter=high&orientation=portrait&page=${pageNumber}`;
+
+        try {
+            const response = await fetch(URL);
             if (!response.ok) {
                 throw new Error('Response: server error!');
             }
@@ -61,8 +65,13 @@ const gallerySlice = createSlice({
             action.payload.forEach((item: any) => {
                 state.galleryCards.push(
                     {
-                        id: item.id,
-                        category: 'Architect',
+                        id: `${Math.random() + item.id}`,
+                        category: getRandomCategory([
+                            'Design',
+                            'Branding',
+                            'illustration',
+                            'Motion'
+                        ]),
                         text: item.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                         image: item.urls.regular,
                         isActive: false

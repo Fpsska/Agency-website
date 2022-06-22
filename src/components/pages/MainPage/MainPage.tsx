@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { fetchImagesData } from '../../../app/slices/gallerySlice';
+
+import { useAppDispatch } from '../../../app/hooks';
+
 import Gallery from '../../Gallery/Gallery';
 
 import './mainPage.scss';
@@ -7,6 +11,13 @@ import './mainPage.scss';
 // /. imports
 
 const MainPage: React.FC = () => {
+
+    const dispatch = useAppDispatch();
+
+    const fetchNewData = (): void => {
+        dispatch(fetchImagesData());
+    };
+
     return (
         <div className="main-page">
             <div className="main-page__wrapper">
@@ -45,7 +56,7 @@ const MainPage: React.FC = () => {
 
                         <Gallery />
 
-                        <button className="gallery__button">Load More</button>
+                        <button className="gallery__button" onClick={fetchNewData}>Load More</button>
 
                     </div>
 
