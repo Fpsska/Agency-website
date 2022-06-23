@@ -1,0 +1,21 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="50.624" height="48.406" viewBox="0 0 50.624 48.406">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ef6d58;
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ef6d58;
+      }
+    </style>
+  </defs>
+  <path id="Polygon" class="cls-1" d="M145,18l22.825,16.584-8.718,26.833H130.893l-8.718-26.833Z" transform="translate(-119.688 -15.5)"/>
+  <path id="Polygon-2" data-name="Polygon" class="cls-2" d="M144.5,32l9.035,6.564-3.451,10.621H138.916l-3.451-10.621Z" transform="translate(-119.688 -15.5)"/>
+</svg>
