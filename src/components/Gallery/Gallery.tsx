@@ -22,7 +22,9 @@ const Gallery: React.FC = () => {
         } else {
             setEmptyStatus(false);
         }
+        console.log(galleryCards)
     }, [galleryCards]);
+
 
     return (
         <div className="gallery__body">

@@ -5,7 +5,8 @@ import { useAppDispatch } from '../../app/hooks';
 import {
     setCardActiveStatus,
     filterGalleryByCategory,
-    deleteGalleryTemplate
+    deleteGalleryTemplate,
+    setNavGalleryActiveStatus
 } from '../../app/slices/gallerySlice';
 
 // /. imports
@@ -34,6 +35,11 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
         dispatch(setCardActiveStatus({ id: id, status: !isActive }));
     };
 
+    const cardCategoryHandler = (): void => {
+        dispatch(filterGalleryByCategory({ category: category.toLocaleLowerCase() }));
+        dispatch(setNavGalleryActiveStatus({ category: category.toLocaleLowerCase(), status: !isActive }));
+    };
+
     useEffect(() => {
         const deleteCard = (e: any): void => {
             if (isActive && e.code === 'Delete') {
@@ -53,8 +59,8 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
             onClick={cardHandler}
         >
             <div className="card__information">
-                <span className="card__tag"
-                    onClick={() => { dispatch(filterGalleryByCategory({ category: category.toLocaleLowerCase() })); }}
+                <span className="card__category"
+                    onClick={cardCategoryHandler}
                 >
                     {category}
                 </span>

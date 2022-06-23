@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { galleryCardsTypes, galleryNavTemplateTypes } from '../../Types/gallerySliceTypes';
 
@@ -104,10 +104,10 @@ const gallerySlice = createSlice({
                 }
             });
         },
-        setNavGalleryActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
-            const { id, status } = action.payload;
+        setNavGalleryActiveStatus(state, action: PayloadAction<{ category: string, status: boolean }>) {
+            const { category, status } = action.payload;
             state.galleryNavTemplate.forEach(item => {
-                if (item.id === id) {
+                if (item.category === category) {
                     item.isActive = status;
                 } else {
                     item.isActive = false;
@@ -137,7 +137,7 @@ const gallerySlice = createSlice({
         deleteGalleryTemplate(state) {
             const correctItem = state.galleryCards.find(findGalleryTemplate);
             removeElement(state.galleryCards, correctItem);
-            state.filteredGalleryData = state.galleryCards; // 
+            // state.filteredGalleryData = state.galleryCards; // 
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;

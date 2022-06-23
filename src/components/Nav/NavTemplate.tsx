@@ -12,7 +12,6 @@ import {
 // /. imports
 
 interface propTypes {
-    id: string,
     text: string,
     href: string,
     category: string,
@@ -27,7 +26,6 @@ interface propTypes {
 const NavTemplate: React.FC<propTypes> = (props) => {
 
     const {
-        id,
         text,
         href,
         category,
@@ -39,10 +37,10 @@ const NavTemplate: React.FC<propTypes> = (props) => {
 
     const dispatch = useAppDispatch();
 
-    const linkHandle = (): void => {
+    const linkHandler = (): void => {
         if (!isDataLoading && !Boolean(error)) {
             dispatch(filterGalleryByCategory({ category: category }));
-            dispatch(setNavGalleryActiveStatus({ id: id, status: !isActive }));
+            dispatch(setNavGalleryActiveStatus({ category: category, status: !isActive }));
         }
     };
 
@@ -52,7 +50,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
                 ?
                 <a className={`nav__link ${isActive ? 'active' : ''} ${isDataLoading || error ? 'disabled' : ''}`}
                     href="#"
-                    onClick={linkHandle}
+                    onClick={linkHandler}
                 >
                     {text}
                 </a>

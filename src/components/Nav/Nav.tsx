@@ -41,7 +41,6 @@ const Nav: React.FC<propTypes> = (props) => {
                     return (
                         <NavTemplate
                             key={item.id}
-                            id={item.id}
                             text={item.text}
                             href={item.href}
                             category={item.category}

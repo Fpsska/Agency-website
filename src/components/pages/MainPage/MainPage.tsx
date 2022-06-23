@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 
-import { fetchImagesData } from '../../../app/slices/gallerySlice';
-
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 import {
+    fetchImagesData,
     filterGalleryByCategory,
-    switchDataLoadingStatus
+    switchDataLoadingStatus,
+    setNavGalleryActiveStatus
 } from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
@@ -24,6 +24,8 @@ const MainPage: React.FC = () => {
 
     const fetchNewData = (): void => {
         dispatch(fetchImagesData());
+        dispatch(filterGalleryByCategory({ category: 'all' }));
+        dispatch(setNavGalleryActiveStatus({category: 'all', status: true}));
     };
 
     useEffect(() => {
@@ -38,7 +40,7 @@ const MainPage: React.FC = () => {
         }
     }, [status]);
 
-    const handleSelect = (value: string): void => {
+    const selectHandler = (value: string): void => {
         switch (value) {
             case 'all':
                 dispatch(filterGalleryByCategory({ category: value }));
@@ -66,11 +68,11 @@ const MainPage: React.FC = () => {
 
                     <div className="gallery__wrapper">
 
-                        <Nav data={galleryNavTemplate} role={'gallery-nav'}/>
+                        <Nav data={galleryNavTemplate} role={'gallery-nav'} />
 
                         <select className="gallery__select select"
                             defaultValue="Show All"
-                            onChange={(e) => handleSelect(e.target.value)}
+                            onChange={(e) => selectHandler(e.target.value)}
                         >
                             <option className="select__item" value="all">Show All</option>
                             <option className="select__item" value="design">Design</option>

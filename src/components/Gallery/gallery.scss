@@ -60,6 +60,7 @@
 }
 
 .card {
+    overflow: hidden;
     cursor: pointer;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -81,7 +82,7 @@
             margin: 0 0 20px 0;
         }
     }
-    &__tag {
+    &__category {
         background-color: #fff;
         border-radius: 20px;
         color: #000;
