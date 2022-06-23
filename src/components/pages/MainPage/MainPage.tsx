@@ -6,11 +6,11 @@ import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 import {
     filterGalleryByCategory,
-    setNavGalleryActiveStatus,
     switchDataLoadingStatus
 } from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
+import Nav from '../../Nav/Nav';
 
 import './mainPage.scss';
 
@@ -18,7 +18,7 @@ import './mainPage.scss';
 
 const MainPage: React.FC = () => {
 
-    const { galleryNavTemplate, status } = useAppSelector(state => state.gallerySlice);
+    const { galleryNavTemplate, status, error, isDataLoading } = useAppSelector(state => state.gallerySlice);
 
     const dispatch = useAppDispatch();
 
@@ -66,25 +66,7 @@ const MainPage: React.FC = () => {
 
                     <div className="gallery__wrapper">
 
-                        <nav className="gallery__nav nav">
-                            <ul className="nav__menu">
-                                {galleryNavTemplate.map(item => {
-                                    return (
-                                        <li className="nav__item" key={item.id}>
-                                            <a className={item.isActive ? 'nav__link active' : 'nav__link'}
-                                                href="#"
-                                                onClick={() => {
-                                                    dispatch(filterGalleryByCategory({ category: item.category }))
-                                                    dispatch(setNavGalleryActiveStatus({ id: item.id, status: !item.isActive }))
-                                                }}
-                                            >
-                                                {item.text}
-                                            </a>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </nav>
+                        <Nav data={galleryNavTemplate} role={'gallery-nav'}/>
 
                         <select className="gallery__select select"
                             defaultValue="Show All"
@@ -99,7 +81,7 @@ const MainPage: React.FC = () => {
 
                         <Gallery />
 
-                        <button className="gallery__button" onClick={fetchNewData}>Load More</button>
+                        <button className="gallery__button" disabled={isDataLoading || !!error} onClick={fetchNewData}>Load More</button>
 
                     </div>
 

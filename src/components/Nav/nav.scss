@@ -1,0 +1,20 @@
+.nav {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    &__menu {
+        display: flex;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin: 0 50px 0 0;
+        }
+    }
+    &__link {
+        color: #fff;
+    }
+    // &__link.active {
+    //     color: #000;
+    // }
+}
+

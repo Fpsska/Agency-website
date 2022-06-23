@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk, current } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk} from '@reduxjs/toolkit';
 
 import { galleryCardsTypes, galleryNavTemplateTypes } from '../../Types/gallerySliceTypes';
 
@@ -137,7 +137,7 @@ const gallerySlice = createSlice({
         deleteGalleryTemplate(state) {
             const correctItem = state.galleryCards.find(findGalleryTemplate);
             removeElement(state.galleryCards, correctItem);
-            state.filteredGalleryData = state.galleryCards;
+            state.filteredGalleryData = state.galleryCards; // 
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;

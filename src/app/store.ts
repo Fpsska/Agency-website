@@ -1,12 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
 import gallerySlice from './slices/gallerySlice';
+import headerSlice from './slices/headerSlice';
 
 // /. imports
 
 export const store = configureStore({
   reducer: {
-    gallerySlice: gallerySlice
+    gallerySlice: gallerySlice,
+    headerSlice: headerSlice
   }
 });
 

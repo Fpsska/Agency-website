@@ -14,12 +14,17 @@
     }
     &__button {
         background-color: #fff;
+        border: 1px solid transparent;
         color: #391400;
         font-weight: 900;
         border-radius: 5px;
         text-transform: uppercase;
         padding: 10px 25px;
         margin: 80px auto 0 auto;
+        &:disabled {
+            border: 1px solid red;
+            cursor: not-allowed;
+        }
     }
     &__select {
         display: none;
@@ -39,8 +44,13 @@
     .nav__link {
         color: #391400;
     }
-    .nav__link.active {
+    .nav__link.active.nav__link.active {
         color: #16cd53;
+        cursor: pointer;
+    }
+    .nav__link.disabled {
+        color: red;
+        cursor: not-allowed;
     }
 }
 

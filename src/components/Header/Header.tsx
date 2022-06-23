@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { useAppSelector } from '../../app/hooks';
 
 import logo from '../../assets/images/logo.svg';
 
 import SectionInfo from '../SectionInfo/SectionInfo';
+import Nav from '../Nav/Nav';
 
 import './header.scss';
 
 // /. imports
 
 const Header: React.FC = () => {
+
+    const { headerNavTemplates } = useAppSelector(state => state.headerSlice);
+
     return (
         <header className="header">
             <div className="header__wrapper">
@@ -21,22 +25,7 @@ const Header: React.FC = () => {
                         <h2 className="header__title">Agency</h2>
                     </a>
 
-                    <nav className="nav">
-                        <ul className="nav__menu">
-                            <li className="nav__item">
-                                <NavLink className="nav__link" to="/">About</NavLink>
-                            </li>
-                            <li className="nav__item">
-                                <NavLink className="nav__link" to="/">Services</NavLink>
-                            </li>
-                            <li className="nav__item">
-                                <NavLink className="nav__link" to="/">Pricing</NavLink>
-                            </li>
-                            <li className="nav__item">
-                                <NavLink className="nav__link" to="/">Blog</NavLink>
-                            </li>
-                        </ul>
-                    </nav>
+                    <Nav data={headerNavTemplates} role={'header-nav'} />
 
                     <div className="header__contacts">
                         <button className="header__button">CONTACT</button>
