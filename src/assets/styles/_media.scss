@@ -16,6 +16,12 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .main {
+        padding: 45px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header__bar {
         justify-content: center;
