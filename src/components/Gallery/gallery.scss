@@ -39,16 +39,15 @@
 
 .card {
     cursor: pointer;
-    border: 1px solid transparent;
     border-radius: 10px;
-    background-color: rgba(105, 97, 97, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     height: 415px;
     position: relative;
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     &__information {
         position: absolute;
         bottom: 0;
@@ -91,5 +90,5 @@
 }
 
 .card.active {
-    border: 2px solid greenyellow;
+    outline: 2px solid greenyellow;
 }

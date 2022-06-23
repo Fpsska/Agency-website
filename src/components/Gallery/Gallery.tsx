@@ -18,6 +18,7 @@ const Gallery: React.FC = () => {
                 return (
                     <GalleryTemplate
                     key={item.id}
+                    id={item.id}
                     category={item.category}
                     text={item.text}
                     image={item.image}

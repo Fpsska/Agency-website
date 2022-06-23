@@ -4,6 +4,8 @@ import { galleryCardsTypes } from '../../Types/gallerySliceTypes';
 
 import { getRandomCategory } from '../../helpers/getRandomCategory';
 
+import noImage from '../../assets/images/image-placeholder.png';
+
 // /. imports
 
 export const fetchImagesData = createAsyncThunk(
@@ -51,6 +53,15 @@ const gallerySlice = createSlice({
     name: 'gallerySlice',
     initialState,
     reducers: {
+        setActiveStatus(state, action:PayloadAction<{id: string, status: boolean}>) {
+            state.galleryCards.forEach(item => {
+                if (item.id === action.payload.id) {
+                    item.isActive = action.payload.status;
+                } else {
+                    item.isActive = false;
+                }
+            });
+        }
     },
     extraReducers: {
         [fetchImagesData.pending.type]: (state) => {
@@ -73,7 +84,7 @@ const gallerySlice = createSlice({
                             'Motion'
                         ]),
                         text: item.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        image: item.urls.regular,
+                        image: item.urls.regulr || noImage,
                         isActive: false
                     }
                 );
@@ -86,6 +97,7 @@ const gallerySlice = createSlice({
 });
 
 export const {
+    setActiveStatus
 } = gallerySlice.actions;
 
 export default gallerySlice.reducer;
