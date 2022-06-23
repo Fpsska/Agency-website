@@ -6,7 +6,8 @@ import {
     fetchImagesData,
     filterGalleryByCategory,
     switchDataLoadingStatus,
-    setNavGalleryActiveStatus
+    setNavGalleryActiveStatus,
+    setSelectDefaultValue
 } from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
@@ -18,7 +19,13 @@ import './mainPage.scss';
 
 const MainPage: React.FC = () => {
 
-    const { galleryNavTemplate, status, error, isDataLoading } = useAppSelector(state => state.gallerySlice);
+    const {
+        galleryNavTemplate,
+        status,
+        error,
+        isDataLoading,
+        SelectDefaultValue
+    } = useAppSelector(state => state.gallerySlice);
 
     const dispatch = useAppDispatch();
 
@@ -40,18 +47,23 @@ const MainPage: React.FC = () => {
         switch (value) {
             case 'all':
                 dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(setSelectDefaultValue(value));
                 break;
             case 'design':
                 dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(setSelectDefaultValue(value));
                 break;
             case 'branding':
                 dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(setSelectDefaultValue(value));
                 break;
             case 'illustration':
                 dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(setSelectDefaultValue(value));
                 break;
             case 'motion':
                 dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(setSelectDefaultValue(value));
                 break;
         }
     };
@@ -67,8 +79,9 @@ const MainPage: React.FC = () => {
                         <Nav data={galleryNavTemplate} role={'gallery-nav'} />
 
                         <select className="gallery__select select"
-                            defaultValue="Show All"
+                            value={SelectDefaultValue}
                             onChange={(e) => selectHandler(e.target.value)}
+                            disabled={isDataLoading || !!error}
                         >
                             <option className="select__item" value="all">Show All</option>
                             <option className="select__item" value="design">Design</option>

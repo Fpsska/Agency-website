@@ -43,7 +43,8 @@ interface gallerySliceState {
     galleryNavTemplate: galleryNavTemplateTypes[],
     status: string,
     error: string,
-    isDataLoading: boolean
+    isDataLoading: boolean,
+    SelectDefaultValue: string,
 }
 
 // /. interfaces
@@ -85,7 +86,8 @@ const initialState: gallerySliceState = {
     ],
     status: '',
     error: '',
-    isDataLoading: true
+    isDataLoading: true,
+    SelectDefaultValue: 'all'
 };
 
 // /. initialState
@@ -144,6 +146,9 @@ const gallerySlice = createSlice({
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;
+        },
+        setSelectDefaultValue(state, action: PayloadAction<string>) {
+            state.SelectDefaultValue = action.payload;
         }
     },
     extraReducers: {
@@ -186,7 +191,8 @@ export const {
     setNavGalleryActiveStatus,
     filterGalleryByCategory,
     deleteGalleryTemplate,
-    switchDataLoadingStatus
+    switchDataLoadingStatus,
+    setSelectDefaultValue
 } = gallerySlice.actions;
 
 export default gallerySlice.reducer;

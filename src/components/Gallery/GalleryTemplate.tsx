@@ -6,7 +6,8 @@ import {
     setCardActiveStatus,
     filterGalleryByCategory,
     deleteGalleryTemplate,
-    setNavGalleryActiveStatus
+    setNavGalleryActiveStatus,
+    setSelectDefaultValue
 } from '../../app/slices/gallerySlice';
 
 // /. imports
@@ -38,6 +39,7 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
     const cardCategoryHandler = (): void => {
         dispatch(filterGalleryByCategory({ category: category.toLocaleLowerCase() }));
         dispatch(setNavGalleryActiveStatus({ category: category.toLocaleLowerCase(), status: !isActive }));
+        dispatch(setSelectDefaultValue(category.toLocaleLowerCase()));
     };
 
     useEffect(() => {
