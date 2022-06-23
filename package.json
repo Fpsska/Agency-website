@@ -3,7 +3,7 @@
   "author": "Fpsska",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Fpsska.github.io/Upiter-Task",
+  "homepage": "https://Fpsska.github.io/Jupiter-Task",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",

@@ -15,7 +15,7 @@ const initialState: headerSliceState = {
         {
             id: '1',
             text: 'About',
-            href: '/Upiter-Task/',
+            href: '/Jupiter-Task/',
             isActive: true
         },
         {

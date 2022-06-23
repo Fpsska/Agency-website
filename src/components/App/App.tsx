@@ -18,7 +18,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="Upiter-Task" element={<Layout />}>
+        <Route path="Jupiter-Task" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="Services" element={<ServicesPage />} />
           <Route path="Pricing" element={<PricingPage />} />
