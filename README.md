@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
+###### _powered by :_
+
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [css-spinner](https://github.com/loadingio/css-spinner/)
+
+### `Watch demo` _[Upiter-Task](https://fpsska.github.io/Upiter-Task/)_
+
 ## Available Scripts
 
 In the project directory, you can run:
