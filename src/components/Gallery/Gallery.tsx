@@ -10,7 +10,7 @@ import './gallery.scss';
 
 const Gallery: React.FC = () => {
 
-    const { galleryCards } = useAppSelector(state => state.gallerySlice);
+    const { galleryCards, isDataLoading, error } = useAppSelector(state => state.gallerySlice);
 
     const [emptyStatus, setEmptyStatus] = useState<boolean>(false);
 
@@ -24,9 +24,7 @@ const Gallery: React.FC = () => {
 
     return (
         <div className="gallery__body">
-            {emptyStatus
-                ?
-                <h3 className="gallery__message">no matches</h3>
+            {isDataLoading ? <div>Loading...</div>
                 :
                 <div className="gallery__photos">
                     {galleryCards.map(item => {
@@ -40,7 +38,14 @@ const Gallery: React.FC = () => {
                                 isActive={item.isActive}
                             />
                         );
-                    })}</div>
+                    })}
+                </div>
+            }
+            {
+                !isDataLoading && error && <h3 className="error">Error: {error}</h3>
+            }
+            {
+                !isDataLoading && !error && emptyStatus ? <h3 className="gallery__message">no matches</h3> : <></>
             }
         </div>
     );

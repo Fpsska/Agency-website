@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #000;
@@ -55,4 +55,10 @@ select {
     flex: 1 0 auto;
     padding: 0 135px;
     background-color: #fdf0e9;
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    text-align: center;
 }

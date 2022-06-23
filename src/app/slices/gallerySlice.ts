@@ -42,7 +42,8 @@ interface gallerySliceState {
     filteredGalleryData: galleryCardsTypes[],
     galleryNavTemplate: galleryNavTemplateTypes[],
     status: string,
-    error: string
+    error: string,
+    isDataLoading: boolean
 }
 
 // /. interfaces
@@ -83,7 +84,8 @@ const initialState: gallerySliceState = {
         }
     ],
     status: '',
-    error: ''
+    error: '',
+    isDataLoading: true
 };
 
 // /. initialState
@@ -136,6 +138,9 @@ const gallerySlice = createSlice({
             const correctItem = state.galleryCards.find(findGalleryTemplate);
             removeElement(state.galleryCards, correctItem);
             state.filteredGalleryData = state.galleryCards;
+        },
+        switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
+            state.isDataLoading = action.payload;
         }
     },
     extraReducers: {
@@ -166,8 +171,9 @@ const gallerySlice = createSlice({
             });
             state.filteredGalleryData = state.galleryCards;
         },
-        [fetchImagesData.rejected.type]: (state) => {
+        [fetchImagesData.rejected.type]: (state, action: PayloadAction<string>) => {
             state.status = 'failed';
+            state.error = action.payload;
         }
     }
 });
@@ -176,7 +182,8 @@ export const {
     setCardActiveStatus,
     setNavGalleryActiveStatus,
     filterGalleryByCategory,
-    deleteGalleryTemplate
+    deleteGalleryTemplate,
+    switchDataLoadingStatus
 } = gallerySlice.actions;
 
 export default gallerySlice.reducer;

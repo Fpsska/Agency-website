@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { fetchImagesData } from '../../../app/slices/gallerySlice';
 
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
-import { filterGalleryByCategory, setNavGalleryActiveStatus } from '../../../app/slices/gallerySlice';
+import {
+    filterGalleryByCategory,
+    setNavGalleryActiveStatus,
+    switchDataLoadingStatus
+} from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
 
@@ -14,13 +18,25 @@ import './mainPage.scss';
 
 const MainPage: React.FC = () => {
 
-    const { galleryNavTemplate } = useAppSelector(state => state.gallerySlice);
+    const { galleryNavTemplate, status } = useAppSelector(state => state.gallerySlice);
 
     const dispatch = useAppDispatch();
 
     const fetchNewData = (): void => {
         dispatch(fetchImagesData());
     };
+
+    useEffect(() => {
+        if (status === 'loading') {
+            setTimeout(() => {
+                dispatch(switchDataLoadingStatus(true));
+            }, 2000);
+        } else {
+            setTimeout(() => {
+                dispatch(switchDataLoadingStatus(false));
+            }, 2000);
+        }
+    }, [status]);
 
     const handleSelect = (value: string): void => {
         switch (value) {
