@@ -4,6 +4,8 @@ import { fetchImagesData } from '../../../app/slices/gallerySlice';
 
 import { useAppDispatch } from '../../../app/hooks';
 
+import { filterGalleryByCategory } from '../../../app/slices/gallerySlice';
+
 import Gallery from '../../Gallery/Gallery';
 
 import './mainPage.scss';
@@ -29,19 +31,19 @@ const MainPage: React.FC = () => {
                         <nav className="gallery__nav nav">
                             <ul className="nav__menu">
                                 <li className="nav__item">
-                                    <a className="nav__link active" href="#">Show All</a>
+                                    <a className="nav__link active" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'all' }))}>Show All</a>
                                 </li>
                                 <li className="nav__item">
-                                    <a className="nav__link" href="#">Design</a>
+                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'design' }))}>Design</a>
                                 </li>
                                 <li className="nav__item">
-                                    <a className="nav__link" href="#">Branding</a>
+                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'branding' }))}>Branding</a>
                                 </li>
                                 <li className="nav__item">
-                                    <a className="nav__link" href="#">illustration</a>
+                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'illustration' }))}>illustration</a>
                                 </li>
                                 <li className="nav__item">
-                                    <a className="nav__link" href="#">Motion</a>
+                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'motion' }))}>Motion</a>
                                 </li>
                             </ul>
                         </nav>

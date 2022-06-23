@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 
-import { setActiveStatus } from '../../app/slices/gallerySlice';
+import { setCardActiveStatus } from '../../app/slices/gallerySlice';
 
 // /. imports
 
@@ -27,7 +27,7 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
     const dispatch = useAppDispatch();
 
     const cardHandler = (): void => {
-        dispatch(setActiveStatus({ id: id, status: !isActive }));
+        dispatch(setCardActiveStatus({ id: id, status: !isActive }));
     };
 
     return (

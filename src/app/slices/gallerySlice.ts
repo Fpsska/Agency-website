@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 import { galleryCardsTypes } from '../../Types/gallerySliceTypes';
 
@@ -35,6 +35,7 @@ export const fetchImagesData = createAsyncThunk(
 
 interface gallerySliceState {
     galleryCards: galleryCardsTypes[],
+    filteredGalleryData: galleryCardsTypes[],
     status: string,
     error: string
 }
@@ -43,6 +44,7 @@ interface gallerySliceState {
 
 const initialState: gallerySliceState = {
     galleryCards: [],
+    filteredGalleryData: [],
     status: '',
     error: ''
 };
@@ -53,14 +55,37 @@ const gallerySlice = createSlice({
     name: 'gallerySlice',
     initialState,
     reducers: {
-        setActiveStatus(state, action:PayloadAction<{id: string, status: boolean}>) {
+        setCardActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
+            const { id, status } = action.payload;
             state.galleryCards.forEach(item => {
-                if (item.id === action.payload.id) {
-                    item.isActive = action.payload.status;
+                if (item.id === id) {
+                    item.isActive = status;
                 } else {
                     item.isActive = false;
                 }
             });
+        },
+        filterGalleryByCategory(state, action: PayloadAction<{ category: string }>) {
+
+            const { category } = action.payload;
+
+            switch (category) {
+                case 'all':
+                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() !== category);
+                    break;
+                case 'design':
+                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
+                    break;
+                case 'branding':
+                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
+                    break;
+                case 'illustration':
+                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
+                    break;
+                case 'motion':
+                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
+                    break;
+            }
         }
     },
     extraReducers: {
@@ -84,11 +109,12 @@ const gallerySlice = createSlice({
                             'Motion'
                         ]),
                         text: item.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        image: item.urls.regulr || noImage,
+                        image: item.urls.regular || noImage,
                         isActive: false
                     }
                 );
             });
+            state.filteredGalleryData = state.galleryCards;
         },
         [fetchImagesData.rejected.type]: (state) => {
             state.status = 'failed';
@@ -97,7 +123,8 @@ const gallerySlice = createSlice({
 });
 
 export const {
-    setActiveStatus
+    setCardActiveStatus,
+    filterGalleryByCategory
 } = gallerySlice.actions;
 
 export default gallerySlice.reducer;
