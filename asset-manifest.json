@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Upiter-Task/static/css/main.04ab3e80.css",
-    "main.js": "/Upiter-Task/static/js/main.647d4612.js",
-    "static/js/787.e7a389ad.chunk.js": "/Upiter-Task/static/js/787.e7a389ad.chunk.js",
-    "static/media/image-placeholder.png": "/Upiter-Task/static/media/image-placeholder.5f1cab107928e8645e7e.png",
-    "index.html": "/Upiter-Task/index.html",
-    "static/media/logo.svg": "/Upiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
-    "main.04ab3e80.css.map": "/Upiter-Task/static/css/main.04ab3e80.css.map",
-    "main.647d4612.js.map": "/Upiter-Task/static/js/main.647d4612.js.map",
-    "787.e7a389ad.chunk.js.map": "/Upiter-Task/static/js/787.e7a389ad.chunk.js.map"
+    "main.css": "/Jupiter-Task/static/css/main.04ab3e80.css",
+    "main.js": "/Jupiter-Task/static/js/main.725ecde6.js",
+    "static/js/787.e7a389ad.chunk.js": "/Jupiter-Task/static/js/787.e7a389ad.chunk.js",
+    "static/media/image-placeholder.png": "/Jupiter-Task/static/media/image-placeholder.5f1cab107928e8645e7e.png",
+    "index.html": "/Jupiter-Task/index.html",
+    "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
+    "main.04ab3e80.css.map": "/Jupiter-Task/static/css/main.04ab3e80.css.map",
+    "main.725ecde6.js.map": "/Jupiter-Task/static/js/main.725ecde6.js.map",
+    "787.e7a389ad.chunk.js.map": "/Jupiter-Task/static/js/787.e7a389ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.04ab3e80.css",
-    "static/js/main.647d4612.js"
+    "static/js/main.725ecde6.js"
   ]
 }
