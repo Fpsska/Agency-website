@@ -12,9 +12,10 @@
     }
     &__link {
         color: #fff;
+        font-weight: 600;
     }
-    // &__link.active {
-    //     color: #000;
-    // }
+    &__link.active {
+        color: #ef6d58;
+    }
 }
 

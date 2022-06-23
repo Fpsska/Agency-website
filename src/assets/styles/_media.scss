@@ -62,4 +62,12 @@
     .gallery__photos {
         grid-template-columns: 100%;
     }
+    .blog-page__wrapper,
+    .services-page__wrapper,
+    .pricing-page__wrapper {
+        flex-direction: column;
+        .message {
+            margin: 0 0 5px 0;
+        }
+    }
 }

@@ -43,6 +43,7 @@ const Nav: React.FC<propTypes> = (props) => {
                             key={item.id}
                             id={item.id}
                             text={item.text}
+                            href={item.href}
                             category={item.category}
                             isActive={item.isActive}
                             role={role}

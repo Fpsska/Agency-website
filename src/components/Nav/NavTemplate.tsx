@@ -14,6 +14,7 @@ import {
 interface propTypes {
     id: string,
     text: string,
+    href: string,
     category: string,
     isActive: boolean,
     role: string,
@@ -28,6 +29,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
     const {
         id,
         text,
+        href,
         category,
         isActive,
         role,
@@ -55,7 +57,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
                     {text}
                 </a>
                 :
-                <NavLink className="nav__link" to="/">{text}</NavLink>
+                <NavLink className="nav__link" to={href}>{text}</NavLink>
             }
         </li>
     );

@@ -15,21 +15,25 @@ const initialState: headerSliceState = {
         {
             id: '1',
             text: 'About',
+            href: '/Upiter-Task/',
             isActive: true
         },
         {
             id: '2',
             text: 'Services',
+            href: 'Services',
             isActive: false
         },
         {
             id: '3',
             text: 'Pricing',
+            href: 'Pricing',
             isActive: false
         },
         {
             id: '4',
             text: 'Blog',
+            href: 'Blog',
             isActive: false
         }
     ]

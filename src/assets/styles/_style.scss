@@ -62,3 +62,22 @@ select {
     font-weight: 400;
     text-align: center;
 }
+
+.blog-page,
+.services-page,
+.pricing-page {
+    height: 100%;
+}
+.blog-page__wrapper,
+.services-page__wrapper,
+.pricing-page__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    margin: 0 10px 0 0;
+}
+
