@@ -11,8 +11,10 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer__wrapper">
                 <div className="footer__social">
-                    <BsGithub size={'34px'} color={'#000'} />
-                    <a className="footer__link" target="_blank" href="https://github.com/Fpsska">Fpsska</a>
+                    <a className="footer__link" target="_blank" href="https://github.com/Fpsska">
+                        <BsGithub size={'34px'} color={'#000'} />
+                        <span className="footer__text">Fpsska</span>
+                    </a>
                 </div>
             </div>
         </footer>

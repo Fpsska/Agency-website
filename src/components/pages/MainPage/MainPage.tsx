@@ -25,15 +25,11 @@ const MainPage: React.FC = () => {
     const fetchNewData = (): void => {
         dispatch(fetchImagesData());
         dispatch(filterGalleryByCategory({ category: 'all' }));
-        dispatch(setNavGalleryActiveStatus({category: 'all', status: true}));
+        dispatch(setNavGalleryActiveStatus({ category: 'all', status: true }));
     };
 
     useEffect(() => {
-        if (status === 'loading') {
-            setTimeout(() => {
-                dispatch(switchDataLoadingStatus(true));
-            }, 2000);
-        } else {
+        if (status !== 'loading') {
             setTimeout(() => {
                 dispatch(switchDataLoadingStatus(false));
             }, 2000);

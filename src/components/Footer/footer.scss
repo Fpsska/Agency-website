@@ -6,8 +6,6 @@
         padding: 10px 0;
     }
     &__social {
-        display: flex;
-        align-items: center;
         cursor: pointer;
         :not(:last-child) {
             margin: 0 10px 0 0;
@@ -22,6 +20,8 @@
         transition: all 0.25s linear;
     }
     &__link {
-        color: var(--footer-link-color);
+        color: #000;
+        display: flex;
+        align-items: center;
     }
 }

@@ -22,7 +22,7 @@ const Gallery: React.FC = () => {
         } else {
             setEmptyStatus(false);
         }
-        console.log(galleryCards)
+        // console.log(galleryCards)
     }, [galleryCards]);
 
 

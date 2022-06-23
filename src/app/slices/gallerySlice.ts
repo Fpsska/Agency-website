@@ -8,12 +8,12 @@ import { findGalleryTemplate } from '../../helpers/findElement';
 
 import { removeElement } from '../../helpers/removeElement';
 
-import noImage from '../../assets/images/image-placeholder.png';
+import image_placeholder from '../../assets/images/image-placeholder.png';
 
 // /. imports
 
 export const fetchImagesData = createAsyncThunk(
-    'tableSlice/fetchUsersData',
+    'gallerySlice/fetchImagesData',
     async (_, { rejectWithValue }) => {
 
         const pageNumber = Math.floor(Math.random() * (10 - 1)) + 1;
@@ -136,8 +136,11 @@ const gallerySlice = createSlice({
         },
         deleteGalleryTemplate(state) {
             const correctItem = state.galleryCards.find(findGalleryTemplate);
-            removeElement(state.galleryCards, correctItem);
-            // state.filteredGalleryData = state.galleryCards; // 
+            removeElement(state.galleryCards, state.galleryCards.find(findGalleryTemplate)); // возвращает массив удалённых элементов
+            removeElement(state.filteredGalleryData, state.galleryCards.find(findGalleryTemplate));
+            // state.galleryCards.find(findGalleryTemplate);
+
+            // state.galleryCards = state.filteredGalleryData.filter(item => item.i)
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;
@@ -164,7 +167,7 @@ const gallerySlice = createSlice({
                             'Motion'
                         ]),
                         text: item.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        image: item.urls.regular || noImage,
+                        image: item.urls.regular || image_placeholder,
                         isActive: false
                     }
                 );

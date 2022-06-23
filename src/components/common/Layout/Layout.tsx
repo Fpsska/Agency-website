@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
 
     useEffect(() => {
         dispatch(fetchImagesData());
-    }, [])
+    }, []);
 
     return (
         <div className="page">
