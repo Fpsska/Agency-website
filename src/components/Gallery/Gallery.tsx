@@ -17,12 +17,12 @@ const Gallery: React.FC = () => {
             {galleryCards.map(item => {
                 return (
                     <GalleryTemplate
-                    key={item.id}
-                    id={item.id}
-                    category={item.category}
-                    text={item.text}
-                    image={item.image}
-                    isActive={item.isActive}
+                        key={item.id}
+                        id={item.id}
+                        category={item.category}
+                        text={item.text}
+                        image={item.image}
+                        isActive={item.isActive}
                     />
                 );
             })}

@@ -1,8 +1,12 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 import { galleryCardsTypes, galleryNavTemplateTypes } from '../../Types/gallerySliceTypes';
 
-import { getRandomCategory } from '../../helpers/getRandomCategory';
+import { getRandomCategory } from '../../helpers/getRandomElement';
+
+import { findGalleryTemplate } from '../../helpers/findElement';
+
+import { removeElement } from '../../helpers/removeElement';
 
 import noImage from '../../assets/images/image-placeholder.png';
 
@@ -98,7 +102,7 @@ const gallerySlice = createSlice({
                 }
             });
         },
-        setNavGellaryActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
+        setNavGalleryActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
             const { id, status } = action.payload;
             state.galleryNavTemplate.forEach(item => {
                 if (item.id === id) {
@@ -127,6 +131,11 @@ const gallerySlice = createSlice({
                     state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
                     break;
             }
+        },
+        deleteGalleryTemplate(state) {
+            const correctItem = state.galleryCards.find(findGalleryTemplate);
+            removeElement(state.galleryCards, correctItem);
+            state.filteredGalleryData = state.galleryCards;
         }
     },
     extraReducers: {
@@ -165,8 +174,9 @@ const gallerySlice = createSlice({
 
 export const {
     setCardActiveStatus,
-    setNavGellaryActiveStatus,
-    filterGalleryByCategory
+    setNavGalleryActiveStatus,
+    filterGalleryByCategory,
+    deleteGalleryTemplate
 } = gallerySlice.actions;
 
 export default gallerySlice.reducer;

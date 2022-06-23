@@ -4,7 +4,7 @@ import { fetchImagesData } from '../../../app/slices/gallerySlice';
 
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
-import { filterGalleryByCategory, setNavGellaryActiveStatus } from '../../../app/slices/gallerySlice';
+import { filterGalleryByCategory, setNavGalleryActiveStatus } from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
 
@@ -59,7 +59,7 @@ const MainPage: React.FC = () => {
                                                 href="#"
                                                 onClick={() => {
                                                     dispatch(filterGalleryByCategory({ category: item.category }))
-                                                    dispatch(setNavGellaryActiveStatus({ id: item.id, status: !item.isActive }))
+                                                    dispatch(setNavGalleryActiveStatus({ id: item.id, status: !item.isActive }))
                                                 }}
                                             >
                                                 {item.text}
