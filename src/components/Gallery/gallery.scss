@@ -1,8 +1,11 @@
 .gallery {
+    height: 100%;
     &__wrapper {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         padding: 85px 0 70px 0;
+        height: 100%;
     }
     &__photos {
         display: grid;
@@ -23,6 +26,10 @@
         border-radius: 5px;
         padding: 10px;
         margin: 0 0 25px 0;
+    }
+    &__message {
+        color: #000;
+        text-align: center;
     }
 }
 
