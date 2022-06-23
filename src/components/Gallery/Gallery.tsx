@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { useAppSelector } from '../../app/hooks';
 
+import Preloader from '../../components/common/Preloader/Preloader';
+
 import GalleryTemplate from './GalleryTemplate';
 
 import './gallery.scss';
@@ -24,7 +26,10 @@ const Gallery: React.FC = () => {
 
     return (
         <div className="gallery__body">
-            {isDataLoading ? <div>Loading...</div>
+            {isDataLoading ?
+                <div className="gallery__preloader">
+                    <Preloader />
+                </div>
                 :
                 <div className="gallery__photos">
                     {galleryCards.map(item => {

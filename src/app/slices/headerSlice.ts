@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { headerNavTemplatesTypes } from '../../Types/headerSliceTypes';
+
 // /. imports
 
 interface headerSliceState {
-    headerNavTemplates: any[],
+    headerNavTemplates: headerNavTemplatesTypes[],
 }
 
 // /. interfaces

@@ -36,6 +36,11 @@
         color: #000;
         text-align: center;
     }
+    &__preloader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .gallery__nav.nav {
