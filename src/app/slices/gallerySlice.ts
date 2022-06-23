@@ -138,11 +138,7 @@ const gallerySlice = createSlice({
         },
         deleteGalleryTemplate(state) {
             const correctItem = state.galleryCards.find(findGalleryTemplate);
-            removeElement(state.galleryCards, state.galleryCards.find(findGalleryTemplate)); // возвращает массив удалённых элементов
-            removeElement(state.filteredGalleryData, state.galleryCards.find(findGalleryTemplate));
-            // state.galleryCards.find(findGalleryTemplate);
-
-            // state.galleryCards = state.filteredGalleryData.filter(item => item.i)
+            removeElement(state.galleryCards, correctItem);
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;
