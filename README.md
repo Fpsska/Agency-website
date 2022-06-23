@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [css-spinner](https://github.com/loadingio/css-spinner/)
 
-### `Watch demo` _[Upiter-Task](https://fpsska.github.io/Upiter-Task/)_
+### `Watch demo` _[Jupiter-Task](https://fpsska.github.io/Jupiter-Task/)_
 
 ## Available Scripts
 
