@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction, createAsyncThunk, current } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { galleryCardsTypes } from '../../Types/gallerySliceTypes';
+import { galleryCardsTypes, galleryNavTemplateTypes } from '../../Types/gallerySliceTypes';
 
 import { getRandomCategory } from '../../helpers/getRandomCategory';
 
@@ -36,6 +36,7 @@ export const fetchImagesData = createAsyncThunk(
 interface gallerySliceState {
     galleryCards: galleryCardsTypes[],
     filteredGalleryData: galleryCardsTypes[],
+    galleryNavTemplate: galleryNavTemplateTypes[],
     status: string,
     error: string
 }
@@ -45,6 +46,38 @@ interface gallerySliceState {
 const initialState: gallerySliceState = {
     galleryCards: [],
     filteredGalleryData: [],
+    galleryNavTemplate: [
+        {
+            id: '1',
+            text: 'Show All',
+            category: 'all',
+            isActive: true
+        },
+        {
+            id: '2',
+            text: 'Design',
+            category: 'design',
+            isActive: false
+        },
+        {
+            id: '3',
+            text: 'Branding',
+            category: 'branding',
+            isActive: false
+        },
+        {
+            id: '4',
+            text: 'Illustration',
+            category: 'illustration',
+            isActive: false
+        },
+        {
+            id: '5',
+            text: 'Motion',
+            category: 'motion',
+            isActive: false
+        }
+    ],
     status: '',
     error: ''
 };
@@ -65,10 +98,18 @@ const gallerySlice = createSlice({
                 }
             });
         },
+        setNavGellaryActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
+            const { id, status } = action.payload;
+            state.galleryNavTemplate.forEach(item => {
+                if (item.id === id) {
+                    item.isActive = status;
+                } else {
+                    item.isActive = false;
+                }
+            });
+        },
         filterGalleryByCategory(state, action: PayloadAction<{ category: string }>) {
-
             const { category } = action.payload;
-
             switch (category) {
                 case 'all':
                     state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() !== category);
@@ -124,6 +165,7 @@ const gallerySlice = createSlice({
 
 export const {
     setCardActiveStatus,
+    setNavGellaryActiveStatus,
     filterGalleryByCategory
 } = gallerySlice.actions;
 

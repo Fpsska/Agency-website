@@ -2,9 +2,9 @@ import React from 'react';
 
 import { fetchImagesData } from '../../../app/slices/gallerySlice';
 
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
-import { filterGalleryByCategory } from '../../../app/slices/gallerySlice';
+import { filterGalleryByCategory, setNavGellaryActiveStatus } from '../../../app/slices/gallerySlice';
 
 import Gallery from '../../Gallery/Gallery';
 
@@ -13,6 +13,8 @@ import './mainPage.scss';
 // /. imports
 
 const MainPage: React.FC = () => {
+
+    const { galleryNavTemplate } = useAppSelector(state => state.gallerySlice);
 
     const dispatch = useAppDispatch();
 
@@ -50,21 +52,21 @@ const MainPage: React.FC = () => {
 
                         <nav className="gallery__nav nav">
                             <ul className="nav__menu">
-                                <li className="nav__item">
-                                    <a className="nav__link active" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'all' }))}>Show All</a>
-                                </li>
-                                <li className="nav__item">
-                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'design' }))}>Design</a>
-                                </li>
-                                <li className="nav__item">
-                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'branding' }))}>Branding</a>
-                                </li>
-                                <li className="nav__item">
-                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'illustration' }))}>illustration</a>
-                                </li>
-                                <li className="nav__item">
-                                    <a className="nav__link" href="#" onClick={() => dispatch(filterGalleryByCategory({ category: 'motion' }))}>Motion</a>
-                                </li>
+                                {galleryNavTemplate.map(item => {
+                                    return (
+                                        <li className="nav__item" key={item.id}>
+                                            <a className={item.isActive ? 'nav__link active' : 'nav__link'}
+                                                href="#"
+                                                onClick={() => {
+                                                    dispatch(filterGalleryByCategory({ category: item.category }))
+                                                    dispatch(setNavGellaryActiveStatus({ id: item.id, status: !item.isActive }))
+                                                }}
+                                            >
+                                                {item.text}
+                                            </a>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </nav>
 

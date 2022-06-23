@@ -10,7 +10,7 @@ interface propTypes {
     id: string,
     category: string,
     text: string,
-    image: string,
+    image?: string,
     isActive: boolean
 }
 
