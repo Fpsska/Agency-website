@@ -59,4 +59,7 @@
     .card__information {
         margin: 10px 10px 45px 20px;
     }
+    .gallery__photos {
+        grid-template-columns: 100%;
+    }
 }

@@ -64,14 +64,13 @@
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    align-items: flex-end;
     height: 415px;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    display: flex;
-    align-items: flex-end;
     &__information {
         margin: 10px 10px 50px 50px;
         display: flex;
