@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 
-import { setCardActiveStatus } from '../../app/slices/gallerySlice';
+import { setCardActiveStatus, filterGalleryByCategory } from '../../app/slices/gallerySlice';
 
 // /. imports
 
@@ -36,7 +36,11 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
             onClick={cardHandler}
         >
             <div className="card__information">
-                <span className="card__tag">{category}</span>
+                <span className="card__tag"
+                    onClick={() => { dispatch(filterGalleryByCategory({ category: category.toLocaleLowerCase() })); }}
+                >
+                    {category}
+                </span>
                 <span className="card__name" title={text}>{text}</span>
             </div>
         </div>
