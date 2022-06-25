@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import { useAppSelector } from '../../app/hooks';
 
+import { filter } from '../../helpers/filter';
+
+import { galleryCardsTypes } from '../../Types/gallerySliceTypes';
+
 import Preloader from '../../components/common/Preloader/Preloader';
 
 import GalleryTemplate from './GalleryTemplate';
@@ -15,6 +19,7 @@ const Gallery: React.FC = () => {
     const { galleryCards, isDataLoading, error, filterBy } = useAppSelector(state => state.gallerySlice);
 
     const [emptyStatus, setEmptyStatus] = useState<boolean>(false);
+    const [currentData, setCurrentData] = useState<galleryCardsTypes[]>(galleryCards);
 
     useEffect(() => {
         if (galleryCards.length === 0) {
@@ -24,22 +29,9 @@ const Gallery: React.FC = () => {
         }
     }, [galleryCards]);
 
-    const filterData = () => {
-        switch (filterBy) {
-            case 'all':
-                return galleryCards;
-            case 'design':
-                return galleryCards.filter((item: any) => item.category.toLocaleLowerCase() === 'design');
-            case 'branding':
-                return galleryCards.filter((item: any) => item.category.toLocaleLowerCase() === 'branding');
-            case 'illustration':
-                return galleryCards.filter((item: any) => item.category.toLocaleLowerCase() === 'illustration');
-            case 'motion':
-                return galleryCards.filter((item: any) => item.category.toLocaleLowerCase() === 'motion');
-            default:
-                return galleryCards;
-        };
-    };
+    useEffect(() => {
+        setCurrentData(filter(galleryCards, filterBy));
+    }, [filterBy, galleryCards]);
 
     return (
         <div className="gallery__body">
@@ -49,7 +41,7 @@ const Gallery: React.FC = () => {
                 </div>
                 :
                 <div className="gallery__photos">
-                    {filterData().map(item => {
+                    {currentData.map(item => {
                         return (
                             <GalleryTemplate
                                 key={item.id}
