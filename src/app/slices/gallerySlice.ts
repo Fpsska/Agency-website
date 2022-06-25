@@ -39,19 +39,18 @@ export const fetchImagesData = createAsyncThunk(
 
 interface gallerySliceState {
     galleryCards: galleryCardsTypes[],
-    filteredGalleryData: galleryCardsTypes[],
     galleryNavTemplate: galleryNavTemplateTypes[],
     status: string,
     error: string,
     isDataLoading: boolean,
     SelectDefaultValue: string,
+    filterBy: string
 }
 
 // /. interfaces
 
 const initialState: gallerySliceState = {
     galleryCards: [],
-    filteredGalleryData: [],
     galleryNavTemplate: [
         {
             id: '1',
@@ -87,7 +86,8 @@ const initialState: gallerySliceState = {
     status: '',
     error: '',
     isDataLoading: true,
-    SelectDefaultValue: 'all'
+    SelectDefaultValue: 'all',
+    filterBy: 'all'
 };
 
 // /. initialState
@@ -116,25 +116,8 @@ const gallerySlice = createSlice({
                 }
             });
         },
-        filterGalleryByCategory(state, action: PayloadAction<{ category: string }>) {
-            const { category } = action.payload;
-            switch (category) {
-                case 'all':
-                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() !== category);
-                    break;
-                case 'design':
-                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
-                    break;
-                case 'branding':
-                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
-                    break;
-                case 'illustration':
-                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
-                    break;
-                case 'motion':
-                    state.galleryCards = state.filteredGalleryData.filter(item => item.category.toLocaleLowerCase() === category);
-                    break;
-            }
+        filterGalleryByCategory(state, action: PayloadAction<string>) {  // PayloadAction<{ category: string }
+            state.filterBy = action.payload;
         },
         deleteGalleryTemplate(state) {
             const correctItem = state.galleryCards.find(findGalleryTemplate);
@@ -173,7 +156,6 @@ const gallerySlice = createSlice({
                     }
                 );
             });
-            state.filteredGalleryData = state.galleryCards;
         },
         [fetchImagesData.rejected.type]: (state, action: PayloadAction<string>) => {
             state.status = 'failed';

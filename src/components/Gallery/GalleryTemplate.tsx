@@ -37,7 +37,7 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
     };
 
     const cardCategoryHandler = (): void => {
-        dispatch(filterGalleryByCategory({ category: category.toLocaleLowerCase() }));
+        dispatch(filterGalleryByCategory(category.toLocaleLowerCase()));
         dispatch(setNavGalleryActiveStatus({ category: category.toLocaleLowerCase(), status: !isActive }));
         dispatch(setSelectDefaultValue(category.toLocaleLowerCase()));
     };

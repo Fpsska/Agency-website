@@ -31,7 +31,7 @@ const MainPage: React.FC = () => {
 
     const fetchNewData = (): void => {
         dispatch(fetchImagesData());
-        dispatch(filterGalleryByCategory({ category: 'all' }));
+        dispatch(filterGalleryByCategory('all')); 
         dispatch(setNavGalleryActiveStatus({ category: 'all', status: true }));
     };
 
@@ -46,23 +46,23 @@ const MainPage: React.FC = () => {
     const selectHandler = (value: string): void => {
         switch (value) {
             case 'all':
-                dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
                 break;
             case 'design':
-                dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
                 break;
             case 'branding':
-                dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
                 break;
             case 'illustration':
-                dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
                 break;
             case 'motion':
-                dispatch(filterGalleryByCategory({ category: value }));
+                dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
                 break;
         }
