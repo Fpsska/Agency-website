@@ -39,5 +39,9 @@
         border-radius: 5px;
         padding: 15px 35px;
         text-transform: uppercase;
+        transition: all .2s linear;
+        &:hover {
+            border: 1px solid #ef6d58;;
+        }
     }
 }

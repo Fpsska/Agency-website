@@ -13,9 +13,12 @@
     &__link {
         color: #fff;
         font-weight: 600;
+        transition: color .2s linear;
+        &:hover {
+            color: #ccc;
+        }
     }
     &__link.active {
         color: #ef6d58;
     }
 }
-
