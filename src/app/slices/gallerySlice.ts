@@ -98,23 +98,11 @@ const gallerySlice = createSlice({
     reducers: {
         setCardActiveStatus(state, action: PayloadAction<{ id: string, status: boolean }>) {
             const { id, status } = action.payload;
-            state.galleryCards.forEach(item => {
-                if (item.id === id) {
-                    item.isActive = status;
-                } else {
-                    item.isActive = false;
-                }
-            });
+            state.galleryCards.forEach(item => item.id === id ? item.isActive = status : item.isActive = false);
         },
         setNavGalleryActiveStatus(state, action: PayloadAction<{ category: string, status: boolean }>) {
             const { category, status } = action.payload;
-            state.galleryNavTemplate.forEach(item => {
-                if (item.category === category) {
-                    item.isActive = status;
-                } else {
-                    item.isActive = false;
-                }
-            });
+            state.galleryNavTemplate.forEach(item => item.category === category ? item.isActive = status : item.isActive = false);
         },
         filterGalleryByCategory(state, action: PayloadAction<string>) {  // PayloadAction<{ category: string }
             state.filterBy = action.payload;
