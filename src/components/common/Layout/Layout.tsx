@@ -6,6 +6,7 @@ import { useAppDispatch } from '../../../app/hooks';
 
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
+import Alert from '../../Alret/Alert';
 
 import { fetchImagesData } from '../../../app/slices/gallerySlice';
 
@@ -21,6 +22,7 @@ const Layout: React.FC = () => {
 
     return (
         <div className="page">
+            <Alert />
             <Header />
             <main className="main">
                 <Outlet />

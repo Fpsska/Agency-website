@@ -104,7 +104,7 @@ const gallerySlice = createSlice({
             const { category, status } = action.payload;
             state.galleryNavTemplate.forEach(item => item.category === category ? item.isActive = status : item.isActive = false);
         },
-        filterGalleryByCategory(state, action: PayloadAction<string>) {  // PayloadAction<{ category: string }
+        filterGalleryByCategory(state, action: PayloadAction<string>) {  
             state.filterBy = action.payload;
         },
         deleteGalleryTemplate(state) {
