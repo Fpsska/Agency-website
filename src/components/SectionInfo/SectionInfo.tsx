@@ -6,10 +6,10 @@ import './sectionInfo.scss';
 
 const SectionInfo: React.FC = () => {
     return (
-        <div className="section-info">
+        <article className="section-info">
             <h1 className="section-info__title">Portfolio</h1>
             <p className="section-info__text">Agency provides a full service range including technical skills, design, business understanding.</p>
-        </div>
+        </article>
     );
 };
 

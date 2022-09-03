@@ -38,7 +38,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
     const dispatch = useAppDispatch();
 
     const linkHandler = (): void => {
-        if (!isDataLoading && !Boolean(error)) {
+        if (!isDataLoading && !error) {
             dispatch(setNavGalleryActiveStatus({ category: category, status: true }));
             dispatch(filterGalleryByCategory(category));
         }

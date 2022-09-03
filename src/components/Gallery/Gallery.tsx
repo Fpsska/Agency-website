@@ -22,12 +22,8 @@ const Gallery: React.FC = () => {
     const [currentData, setCurrentData] = useState<galleryCardsTypes[]>(galleryCards);
 
     useEffect(() => {
-        if (galleryCards.length === 0) {
-            setEmptyStatus(true);
-        } else {
-            setEmptyStatus(false);
-        }
-    }, [galleryCards]);
+        currentData.length === 0 ? setEmptyStatus(true) : setEmptyStatus(false);
+    }, [currentData]);
 
     useEffect(() => {
         setCurrentData(filter(galleryCards, filterBy));
@@ -45,11 +41,7 @@ const Gallery: React.FC = () => {
                         return (
                             <GalleryTemplate
                                 key={item.id}
-                                id={item.id}
-                                category={item.category}
-                                text={item.text}
-                                image={item.image}
-                                isActive={item.isActive}
+                                {...item}
                             />
                         );
                     })}
@@ -59,7 +51,7 @@ const Gallery: React.FC = () => {
                 !isDataLoading && error && <h3 className="error">Error: {error}</h3>
             }
             {
-                !isDataLoading && !error && emptyStatus ? <h3 className="gallery__message">no matches</h3> : <></>
+                !isDataLoading && !error && emptyStatus && <h3 className="gallery__message">no matches</h3>
             }
         </div>
     );
