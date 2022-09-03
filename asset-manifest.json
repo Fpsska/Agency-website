@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/Jupiter-Task/static/css/main.7fa45909.css",
-    "main.js": "/Jupiter-Task/static/js/main.44eb6a7f.js",
+    "main.css": "/Jupiter-Task/static/css/main.d8850b71.css",
+    "main.js": "/Jupiter-Task/static/js/main.6d4d1ce9.js",
     "static/js/787.fcee1894.chunk.js": "/Jupiter-Task/static/js/787.fcee1894.chunk.js",
-    "static/media/image-placeholder.png": "/Jupiter-Task/static/media/image-placeholder.5f1cab107928e8645e7e.png",
     "index.html": "/Jupiter-Task/index.html",
     "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
-    "main.7fa45909.css.map": "/Jupiter-Task/static/css/main.7fa45909.css.map",
-    "main.44eb6a7f.js.map": "/Jupiter-Task/static/js/main.44eb6a7f.js.map",
+    "main.d8850b71.css.map": "/Jupiter-Task/static/css/main.d8850b71.css.map",
+    "main.6d4d1ce9.js.map": "/Jupiter-Task/static/js/main.6d4d1ce9.js.map",
     "787.fcee1894.chunk.js.map": "/Jupiter-Task/static/js/787.fcee1894.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fa45909.css",
-    "static/js/main.44eb6a7f.js"
+    "static/css/main.d8850b71.css",
+    "static/js/main.6d4d1ce9.js"
   ]
 }
