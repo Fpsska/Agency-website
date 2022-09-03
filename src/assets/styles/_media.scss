@@ -1,8 +1,10 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
     .main {
-        padding: 75px;
+        padding: 45px;
     }
+}
 
+@media screen and (max-width: 1024px) {
     .header__bar {
         flex-wrap: wrap;
     }
@@ -17,12 +19,6 @@
 
     .gallery__photos {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .main {
-        padding: 45px;
     }
 }
 
@@ -45,14 +41,6 @@
 
     .gallery__photos {
         grid-template-columns: 1fr;
-    }
-
-    .gallery__nav.nav {
-        display: none;
-    }
-
-    .gallery__select {
-        display: block;
     }
 }
 

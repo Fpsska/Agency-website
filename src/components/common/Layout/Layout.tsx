@@ -8,7 +8,7 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Alert from '../../Alret/Alert';
 
-import { fetchImagesData } from '../../../app/slices/gallerySlice';
+import { fetchImagesData } from '../../../app/api/fetchImagesData';
 
 // /. imports
 

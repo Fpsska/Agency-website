@@ -3,15 +3,15 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 
 import {
-    fetchImagesData,
     filterGalleryByCategory,
     switchDataLoadingStatus,
-    setNavGalleryActiveStatus,
-    setSelectDefaultValue
+    setNavGalleryActiveStatus
 } from '../../../app/slices/gallerySlice';
 
+import { fetchImagesData } from '../../../app/api/fetchImagesData';
+
 import Gallery from '../../Gallery/Gallery';
-import Nav from '../../Nav/Nav';
+import NavLayout from '../../Nav/NavLayout';
 
 import './mainPage.scss';
 
@@ -23,15 +23,14 @@ const MainPage: React.FC = () => {
         galleryNavTemplate,
         status,
         error,
-        isDataLoading,
-        SelectDefaultValue
+        isDataLoading
     } = useAppSelector(state => state.gallerySlice);
 
     const dispatch = useAppDispatch();
 
     const fetchNewData = (): void => {
         dispatch(fetchImagesData());
-        dispatch(filterGalleryByCategory('all')); 
+        dispatch(filterGalleryByCategory('all'));
         dispatch(setNavGalleryActiveStatus({ category: 'all', status: true }));
     };
 
@@ -43,31 +42,6 @@ const MainPage: React.FC = () => {
         }
     }, [status]);
 
-    const selectHandler = (value: string): void => {
-        switch (value) {
-            case 'all':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'design':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'branding':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'illustration':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'motion':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-        }
-    };
-
     return (
         <section className="main-page">
             <div className="main-page__wrapper">
@@ -76,19 +50,7 @@ const MainPage: React.FC = () => {
 
                     <div className="gallery__wrapper">
 
-                        <Nav data={galleryNavTemplate} role={'gallery-nav'} />
-
-                        <select className="gallery__select select"
-                            value={SelectDefaultValue}
-                            onChange={(e) => selectHandler(e.target.value)}
-                            disabled={isDataLoading || !!error}
-                        >
-                            <option className="select__item" value="all">Show All</option>
-                            <option className="select__item" value="design">Design</option>
-                            <option className="select__item" value="branding">Branding</option>
-                            <option className="select__item" value="illustration">illustration</option>
-                            <option className="select__item" value="motion">Motion</option>
-                        </select>
+                        <NavLayout />
 
                         <Gallery />
 

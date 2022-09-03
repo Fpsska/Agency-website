@@ -9,7 +9,7 @@ import './nav.scss';
 // /. imports
 
 interface propTypes {
-    data: any,
+    data: any[],
     role: string
 }
 
