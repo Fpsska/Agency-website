@@ -66,7 +66,9 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
                 >
                     {category}
                 </span>
-                <span className="card__name" title={text}>{text}</span>
+                <blockquote className="card__name" title={text} cite="https://unsplash.com/">
+                    <p>{text}</p>
+                </blockquote>
             </div>
         </div>
     );

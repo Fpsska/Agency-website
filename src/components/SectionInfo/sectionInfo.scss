@@ -1,14 +1,17 @@
 .section-info {
     color: #fff;
     text-align: center;
+
     :not(:last-child) {
         margin: 0 0 35px 0;
     }
+
     &__title {
         margin: 0;
         font-weight: 900;
         font-size: 46px;
     }
+
     &__text {
         margin: 0;
         color: rgba(255, 255, 255, 0.8);

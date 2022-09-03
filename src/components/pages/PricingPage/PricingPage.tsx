@@ -6,12 +6,12 @@ import { VscServerProcess } from 'react-icons/vsc';
 
 const PricingPage: React.FC = () => {
     return (
-        <div className="pricing-page">
+        <section className="pricing-page">
             <div className="pricing-page__wrapper">
                 <p className="message">Pricing Page in progress</p>
                 <VscServerProcess size={'42px'} />
             </div>
-        </div>
+        </section>
     );
 };
 

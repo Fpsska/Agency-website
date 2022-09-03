@@ -69,7 +69,7 @@ const MainPage: React.FC = () => {
     };
 
     return (
-        <div className="main-page">
+        <section className="main-page">
             <div className="main-page__wrapper">
 
                 <div className="gallery">
@@ -99,7 +99,7 @@ const MainPage: React.FC = () => {
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 };
 

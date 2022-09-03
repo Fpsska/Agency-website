@@ -1,5 +1,6 @@
 .gallery {
     height: 100%;
+
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -7,11 +8,13 @@
         padding: 85px 0 70px 0;
         height: 100%;
     }
+
     &__photos {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
+
     &__button {
         background-color: #fff;
         border: 1px solid transparent;
@@ -22,14 +25,18 @@
         padding: 10px 25px;
         margin: 80px auto 0 auto;
         transition: all .2s linear;
+
         &:disabled {
             border: 1px solid red;
             cursor: not-allowed;
         }
+
         &:hover {
-            border: 1px solid #ef6d58;;
+            border: 1px solid #ef6d58;
+            ;
         }
     }
+
     &__select {
         display: none;
         border: 1px solid #f3d1bf;
@@ -37,15 +44,18 @@
         border-radius: 5px;
         padding: 10px;
         margin: 0 0 25px 0;
+
         &:disabled {
             border: 1px solid red;
             cursor: not-allowed;
         }
     }
+
     &__message {
         color: #000;
         text-align: center;
     }
+
     &__preloader {
         display: flex;
         justify-content: center;
@@ -56,13 +66,16 @@
 .gallery__nav.nav {
     margin: 0px 0px 60px 0;
     justify-content: center;
+
     .nav__link {
         color: #391400;
     }
+
     .nav__link.active.nav__link.active {
         color: #16cd53;
         cursor: pointer;
     }
+
     .nav__link.disabled {
         color: red;
         cursor: not-allowed;
@@ -90,10 +103,12 @@
         align-items: flex-start;
         flex-direction: column;
         color: #fff;
+
         :not(:last-child) {
             margin: 0 0 20px 0;
         }
     }
+
     &__category {
         background-color: #fff;
         border-radius: 20px;
@@ -102,26 +117,32 @@
         padding: 10px 15px;
         transform: scale(1);
         transition: transform 0.2s linear;
+
         &:hover {
             transform: scale(1.05);
         }
     }
+
     &__name {
         font-size: 40px;
         font-weight: 600;
         height: 80px;
         line-height: 45px;
         overflow: scroll;
+
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
         }
+
         &::-webkit-scrollbar-track {
             background-color: transparent;
         }
+
         &::-webkit-scrollbar-thumb {
             background-color: transparent;
         }
+
         &::-webkit-scrollbar-corner {
             background-color: transparent;
         }

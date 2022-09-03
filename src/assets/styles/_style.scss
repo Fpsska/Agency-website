@@ -38,6 +38,11 @@ select {
     cursor: pointer;
 }
 
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
 // /. NULL-STYLES
 
 #root,
@@ -68,6 +73,7 @@ select {
 .pricing-page {
     height: 100%;
 }
+
 .blog-page__wrapper,
 .services-page__wrapper,
 .pricing-page__wrapper {
@@ -80,4 +86,3 @@ select {
 .message {
     margin: 0 10px 0 0;
 }
-

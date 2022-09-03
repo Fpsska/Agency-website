@@ -1,24 +1,30 @@
 .footer {
     flex: 0 0 auto;
+
     &__wrapper {
         display: flex;
         justify-content: center;
         padding: 10px 0;
     }
+
     &__social {
         cursor: pointer;
+
         :not(:last-child) {
             margin: 0 10px 0 0;
         }
+
         &:hover {
             svg {
                 transform: scale(1.1);
             }
         }
     }
+
     svg {
         transition: all 0.25s linear;
     }
+
     &__link {
         color: #000;
         display: flex;

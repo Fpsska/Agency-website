@@ -17,7 +17,7 @@ const Header: React.FC = () => {
 
     return (
         <header className="header">
-            <div className="header__wrapper">
+            <section className="header__wrapper">
 
                 <div className="header__bar">
                     <a className="header__logo" href="#">
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
                 <SectionInfo />
 
-            </div>
+            </section>
         </header>
     );
 };

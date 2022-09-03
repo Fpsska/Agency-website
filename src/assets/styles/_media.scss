@@ -2,15 +2,19 @@
     .main {
         padding: 75px;
     }
+
     .header__bar {
         flex-wrap: wrap;
     }
+
     .nav {
         display: none;
     }
+
     .gallery__nav.nav {
         display: flex;
     }
+
     .gallery__photos {
         grid-template-columns: 1fr 1fr;
     }
@@ -26,21 +30,27 @@
     .header__bar {
         justify-content: center;
     }
+
     .header__wrapper {
         padding: 20px 45px 45px 45px;
     }
+
     .header__contacts {
         display: none;
     }
+
     .gallery__wrapper {
         padding: 0 0 70px 0;
     }
+
     .gallery__photos {
         grid-template-columns: 1fr;
     }
+
     .gallery__nav.nav {
         display: none;
     }
+
     .gallery__select {
         display: block;
     }
@@ -50,22 +60,28 @@
     .main {
         padding: 35px 25px 35px 25px;
     }
+
     .header__wrapper {
         padding: 20px 45px 45px 45px;
     }
+
     .gallery__wrapper {
         padding: 0 0 70px 0;
     }
+
     .card__information {
         margin: 10px 10px 45px 20px;
     }
+
     .gallery__photos {
         grid-template-columns: 100%;
     }
+
     .blog-page__wrapper,
     .services-page__wrapper,
     .pricing-page__wrapper {
         flex-direction: column;
+
         .message {
             margin: 0 0 5px 0;
         }

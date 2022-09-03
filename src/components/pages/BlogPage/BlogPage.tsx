@@ -6,12 +6,12 @@ import { VscServerProcess } from 'react-icons/vsc';
 
 const BlogPage: React.FC = () => {
     return (
-        <div className="blog-page">
+        <section className="blog-page">
             <div className="blog-page__wrapper">
                 <p className="message">Blog Page in progress</p>
                 <VscServerProcess size={'42px'} />
             </div>
-        </div>
+        </section>
     );
 };
 
