@@ -4,11 +4,7 @@ import { galleryCardsTypes, galleryNavTemplateTypes } from '../../Types/galleryS
 
 import { getRandomCategory } from '../../helpers/getRandomElement';
 
-import { findGalleryTemplate } from '../../helpers/findElement';
-
-import { removeElement } from '../../helpers/removeElement';
-
-import image_placeholder from '../../assets/images/image-placeholder.png';
+import placeholder_image from '../../assets/images/placeholder_image.jpg';
 
 // /. imports
 
@@ -104,12 +100,15 @@ const gallerySlice = createSlice({
             const { category, status } = action.payload;
             state.galleryNavTemplate.forEach(item => item.category === category ? item.isActive = status : item.isActive = false);
         },
-        filterGalleryByCategory(state, action: PayloadAction<string>) {  
+        filterGalleryByCategory(state, action: PayloadAction<string>) {
             state.filterBy = action.payload;
         },
         deleteGalleryTemplate(state) {
-            const correctItem = state.galleryCards.find(findGalleryTemplate);
-            removeElement(state.galleryCards, correctItem);
+            const currectItem = state.galleryCards.find(item => item.isActive === true);
+
+            if (currectItem) {
+                state.galleryCards.splice(state.galleryCards.indexOf(currectItem), 1);
+            }
         },
         switchDataLoadingStatus(state, action: PayloadAction<boolean>) {
             state.isDataLoading = action.payload;
@@ -128,7 +127,7 @@ const gallerySlice = createSlice({
         ) => {
             state.status = 'success';
 
-            action.payload.forEach((item: any) => {
+            action.payload.map((item: any) => {
                 state.galleryCards.push(
                     {
                         id: `${Math.random() + item.id}`,
@@ -138,8 +137,8 @@ const gallerySlice = createSlice({
                             'illustration',
                             'Motion'
                         ]),
-                        text: item.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        image: item.urls.regular || image_placeholder,
+                        text: item.description ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+                        image: item.urls.regular ?? placeholder_image,
                         isActive: false
                     }
                 );
