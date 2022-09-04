@@ -50,7 +50,7 @@ const MainPage: React.FC = () => {
 
                     <div className="gallery__wrapper">
 
-                        <NavLayout />
+                        <NavLayout role={'gallery-nav'} />
 
                         <Gallery />
 

@@ -26,17 +26,33 @@
     &__link.active {
         color: #ef6d58;
     }
+}
 
-    &__select {
-        border: 1px solid #f3d1bf;
-        color: #80695c;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 0 0 25px 0;
+.burger {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 200px;
+    width: 100%;
+    height: 100%;
 
-        &:disabled {
-            border: 1px solid red;
-            cursor: not-allowed;
+    .nav {
+        background-color: rgba($color: #000000, $alpha: .55);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 20px 40px;
+
+        &__menu {
+            flex-direction: column;
+            align-items: flex-start;
+
+            :not(:last-child) {
+                margin: 0 0 10px 0;
+            }
         }
     }
 }

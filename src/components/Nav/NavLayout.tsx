@@ -5,10 +5,13 @@ import { useAppSelector } from '../../app/hooks';
 import Nav from './Nav';
 import NavSelect from './NavSelect';
 
-const NavLayout: React.FC = () => {
+interface propTypes {
+    role: string
+}
+
+const NavLayout: React.FC<propTypes> = ({ role }) => {
 
     const {
-        galleryNavTemplate,
         SelectDefaultValue,
         isDataLoading,
         error
@@ -29,15 +32,24 @@ const NavLayout: React.FC = () => {
     return (
         <>
             {width <= breakpoint ?
-                <NavSelect
-                    SelectDefaultValue={SelectDefaultValue}
-                    isDataLoading={isDataLoading}
-                    error={error}
-                />
+                <>
+                    {role === 'page-nav' ?
+                        <div className="burger">
+                            <Nav
+                                role={role}
+                            />
+                        </div>
+                        :
+                        <NavSelect
+                            SelectDefaultValue={SelectDefaultValue}
+                            isDataLoading={isDataLoading}
+                            error={error}
+                        />
+                    }
+                </>
                 :
                 <Nav
-                    data={galleryNavTemplate}
-                    role={'gallery-nav'}
+                    role={role}
                 />
             }
         </>

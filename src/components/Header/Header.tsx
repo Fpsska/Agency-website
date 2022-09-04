@@ -1,20 +1,15 @@
 import React from 'react';
 
-import { useAppSelector } from '../../app/hooks';
-
 import logo from '../../assets/images/logo.svg';
 
 import SectionInfo from '../SectionInfo/SectionInfo';
-import Nav from '../Nav/Nav';
+import NavLayout from '../Nav/NavLayout';
 
 import './header.scss';
 
 // /. imports
 
 const Header: React.FC = () => {
-
-    const { headerNavTemplates } = useAppSelector(state => state.headerSlice);
-
     return (
         <header className="header">
             <section className="header__wrapper">
@@ -25,7 +20,7 @@ const Header: React.FC = () => {
                         <h2 className="header__title">Agency</h2>
                     </a>
 
-                    <Nav data={headerNavTemplates} role={'header-nav'} />
+                    <NavLayout role={'page-nav'} />
 
                     <div className="header__contacts">
                         <button className="header__button">CONTACT</button>

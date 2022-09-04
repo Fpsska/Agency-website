@@ -30,7 +30,7 @@ const Gallery: React.FC = () => {
     }, [filterBy, galleryCards]);
 
     return (
-        <div className="gallery__body">
+        <>
             {isDataLoading ?
                 <div className="gallery__preloader">
                     <Preloader />
@@ -53,7 +53,7 @@ const Gallery: React.FC = () => {
             {
                 !isDataLoading && !error && emptyStatus && <h3 className="gallery__message">no matches</h3>
             }
-        </div>
+        </>
     );
 };
 

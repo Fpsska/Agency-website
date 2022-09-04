@@ -17,6 +17,7 @@ interface propTypes {
     href: string,
     category: string,
     isActive: boolean,
+
     role: string,
     isDataLoading: boolean,
     error: string
@@ -31,6 +32,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
         href,
         category,
         isActive,
+        
         role,
         isDataLoading,
         error

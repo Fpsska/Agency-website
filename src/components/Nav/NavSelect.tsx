@@ -36,16 +36,16 @@ const NavSelect: React.FC<propTypes> = (props) => {
     };
 
     return (
-        <select className="nav__select"
+        <select className="gallery__select"
             value={SelectDefaultValue}
             onChange={(e) => selectHandler(e.target.value)}
             disabled={isDataLoading || !!error}
         >
-            <option className="nav__select--item" value="all">Show All</option>
-            <option className="nav__select--item" value="design">Design</option>
-            <option className="nav__select--item" value="branding">Branding</option>
-            <option className="nav__select--item" value="illustration">illustration</option>
-            <option className="nav__select--item" value="motion">Motion</option>
+            <option className="gallery__select--item" value="all">Show All</option>
+            <option className="gallery__select--item" value="design">Design</option>
+            <option className="gallery__select--item" value="branding">Branding</option>
+            <option className="gallery__select--item" value="illustration">illustration</option>
+            <option className="gallery__select--item" value="motion">Motion</option>
         </select>
     );
 };

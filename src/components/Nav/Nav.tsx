@@ -9,7 +9,6 @@ import './nav.scss';
 // /. imports
 
 interface propTypes {
-    data: any[],
     role: string
 }
 
@@ -17,22 +16,23 @@ interface propTypes {
 
 const Nav: React.FC<propTypes> = (props) => {
 
-    const { data, role } = props;
+    const { role } = props;
 
-    const { isDataLoading, error } = useAppSelector(state => state.gallerySlice);
+    const { isDataLoading, error, galleryNavTemplate } = useAppSelector(state => state.gallerySlice);
+    const { headerNavTemplates } = useAppSelector(state => state.headerSlice);
 
-    const [currentData, setCurrentData] = useState<any[]>(data);
+    const [currentData, setCurrentData] = useState<any[]>([]);
 
     useEffect(() => {
         switch (role) {
-            case 'header-nav':
-                setCurrentData(data);
+            case 'page-nav':
+                setCurrentData(headerNavTemplates);
                 break;
             case 'gallery-nav':
-                setCurrentData(data);
+                setCurrentData(galleryNavTemplate);
                 break;
         }
-    }, [data, role]);
+    }, [role, headerNavTemplates, galleryNavTemplate]);
 
     return (
         <nav className={role === 'gallery-nav' ? 'gallery__nav nav' : 'nav'}>
