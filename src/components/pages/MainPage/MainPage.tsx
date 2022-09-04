@@ -45,7 +45,7 @@ const MainPage: React.FC = () => {
     return (
         <section className="main-page">
             <div className="main-page__wrapper">
-
+        
                 <div className="gallery">
 
                     <div className="gallery__wrapper">

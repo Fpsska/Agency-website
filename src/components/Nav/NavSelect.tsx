@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 
-import { filterGalleryByCategory, setSelectDefaultValue } from '../../app/slices/gallerySlice';
+import { filterGalleryByCategory, setSelectDefaultValue, setNavGalleryActiveStatus } from '../../app/slices/gallerySlice';
 
 
 interface propTypes {
@@ -23,26 +23,15 @@ const NavSelect: React.FC<propTypes> = (props) => {
 
     const selectHandler = (value: string): void => {
         switch (value) {
-            case 'all':
+            case value:
                 dispatch(filterGalleryByCategory(value));
                 dispatch(setSelectDefaultValue(value));
+                dispatch(setNavGalleryActiveStatus({ category: value, status: true }));
                 break;
-            case 'design':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'branding':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'illustration':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
-            case 'motion':
-                dispatch(filterGalleryByCategory(value));
-                dispatch(setSelectDefaultValue(value));
-                break;
+            default:
+                dispatch(filterGalleryByCategory('all'));
+                dispatch(setSelectDefaultValue('all'));
+                dispatch(setNavGalleryActiveStatus({ category: 'all', status: true }));
         }
     };
 

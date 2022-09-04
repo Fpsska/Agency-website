@@ -6,7 +6,8 @@ import { useAppDispatch } from '../../app/hooks';
 
 import {
     filterGalleryByCategory,
-    setNavGalleryActiveStatus
+    setNavGalleryActiveStatus,
+    setSelectDefaultValue
 } from '../../app/slices/gallerySlice';
 
 // /. imports
@@ -41,6 +42,7 @@ const NavTemplate: React.FC<propTypes> = (props) => {
         if (!isDataLoading && !error) {
             dispatch(setNavGalleryActiveStatus({ category: category, status: true }));
             dispatch(filterGalleryByCategory(category));
+            dispatch(setSelectDefaultValue(category));
         }
     };
 
