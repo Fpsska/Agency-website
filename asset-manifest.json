@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Jupiter-Task/static/css/main.d8850b71.css",
-    "main.js": "/Jupiter-Task/static/js/main.6d4d1ce9.js",
+    "main.js": "/Jupiter-Task/static/js/main.50bbde94.js",
     "static/js/787.fcee1894.chunk.js": "/Jupiter-Task/static/js/787.fcee1894.chunk.js",
     "index.html": "/Jupiter-Task/index.html",
     "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
     "main.d8850b71.css.map": "/Jupiter-Task/static/css/main.d8850b71.css.map",
-    "main.6d4d1ce9.js.map": "/Jupiter-Task/static/js/main.6d4d1ce9.js.map",
+    "main.50bbde94.js.map": "/Jupiter-Task/static/js/main.50bbde94.js.map",
     "787.fcee1894.chunk.js.map": "/Jupiter-Task/static/js/787.fcee1894.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8850b71.css",
-    "static/js/main.6d4d1ce9.js"
+    "static/js/main.50bbde94.js"
   ]
 }
