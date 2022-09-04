@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjupiter_task=self.webpackChunkjupiter_task||[]).push([[708],{708:function(e,s,i){i.r(s);i(791);var a=i(651),r=i(184);s.default=function(){return(0,r.jsx)("section",{className:"pricing-page",children:(0,r.jsxs)("div",{className:"pricing-page__wrapper",children:[(0,r.jsx)("p",{className:"message",children:"Pricing Page in progress"}),(0,r.jsx)(a.tcg,{size:"42px"})]})})}}}]);
+//# sourceMappingURL=708.302964e6.chunk.js.map
