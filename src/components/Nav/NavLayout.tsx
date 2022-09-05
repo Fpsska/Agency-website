@@ -2,12 +2,20 @@ import React, { useState, useEffect } from 'react';
 
 import { useAppSelector } from '../../app/hooks';
 
+import { useAreaHandler } from '../../hooks/useAreaHandler';
+
+import Burger from '../Burger/Burger';
+
 import Nav from './Nav';
 import NavSelect from './NavSelect';
+
+// /. imports
 
 interface propTypes {
     role: string
 }
+
+// /. interfaces
 
 const NavLayout: React.FC<propTypes> = ({ role }) => {
 
@@ -17,8 +25,12 @@ const NavLayout: React.FC<propTypes> = ({ role }) => {
         error
     } = useAppSelector(state => state.gallerySlice);
 
+    const { isBurgerVisible } = useAppSelector(state => state.headerSlice);
+
     const [width, setWidth] = useState<number>(window.innerWidth);
     const [breakpoint] = useState<number>(768);
+
+    const { refEl, isVisible, setVisibleStatus } = useAreaHandler({ initialStatus: true });
 
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth);
@@ -34,11 +46,13 @@ const NavLayout: React.FC<propTypes> = ({ role }) => {
             {width <= breakpoint ?
                 <>
                     {role === 'page-nav' ?
-                        <div className="burger">
-                            <Nav
-                                role={role}
-                            />
-                        </div>
+                        <Burger
+                            role={role}
+                            burgerRef={refEl}
+                            isBurgerVisible={isVisible}
+                            setBurgerVisibleStatus={setVisibleStatus}
+                            isGLBurgerVisible={isBurgerVisible}
+                        />
                         :
                         <NavSelect
                             SelectDefaultValue={SelectDefaultValue}

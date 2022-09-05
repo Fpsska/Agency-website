@@ -1,0 +1,13 @@
+.burger {
+    transition: all .35s linear;
+    &__wrapper {
+        height: 100%;
+    }
+    &__button  {
+        padding: 10px;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

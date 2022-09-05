@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { headerNavTemplatesTypes } from '../../Types/headerSliceTypes';
 
@@ -6,6 +6,7 @@ import { headerNavTemplatesTypes } from '../../Types/headerSliceTypes';
 
 interface headerSliceState {
     headerNavTemplates: headerNavTemplatesTypes[],
+    isBurgerVisible: boolean
 }
 
 // /. interfaces
@@ -36,7 +37,8 @@ const initialState: headerSliceState = {
             href: 'Blog',
             isActive: false
         }
-    ]
+    ],
+    isBurgerVisible: false
 };
 
 // /. initialState
@@ -45,10 +47,15 @@ const headerSlice = createSlice({
     name: 'headerSlice',
     initialState,
     reducers: {
+        switchBurgerVisibleStatus(state, action: PayloadAction<{ status: boolean }>) {
+            const { status } = action.payload;
+            state.isBurgerVisible = status;
+        }
     }
 });
 
 export const {
+    switchBurgerVisibleStatus
 } = headerSlice.actions;
 
 export default headerSlice.reducer;

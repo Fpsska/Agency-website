@@ -20,6 +20,8 @@ interface propTypes {
     isActive: boolean
 }
 
+// /. interfaces
+
 const GalleryTemplate: React.FC<propTypes> = (props) => {
 
     const {
