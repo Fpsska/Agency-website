@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { FaHamburger } from 'react-icons/fa';
 
@@ -6,11 +6,12 @@ import { useAppSelector, useAppDispatch } from '../../app/hooks';
 
 import { switchBurgerVisibleStatus } from '../../app/slices/headerSlice';
 
+import { useWidthHandler } from '../../hooks/useWidthHandler';
+
 import logo from '../../assets/images/logo.svg';
 
 import SectionInfo from '../SectionInfo/SectionInfo';
 import NavLayout from '../Nav/NavLayout';
-
 
 import './header.scss';
 
@@ -20,17 +21,7 @@ const Header: React.FC = () => {
 
     const { isBurgerVisible } = useAppSelector(state => state.headerSlice);
 
-    const [width, setWidth] = useState<number>(window.innerWidth);
-    const [breakpoint] = useState<number>(768);
-
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-
-        window.addEventListener('resize', handleWindowResize);
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
+    const { isTabletWidth } = useWidthHandler();
 
     const dispatch = useAppDispatch();
 
@@ -39,7 +30,7 @@ const Header: React.FC = () => {
             <section className="header__wrapper">
 
                 <>
-                    {!isBurgerVisible && width <= breakpoint &&
+                    {!isBurgerVisible && isTabletWidth &&
                         <button className="header__button header__button--burger"
                             onClick={() => dispatch(switchBurgerVisibleStatus({ status: true }))}>
                             <FaHamburger size={24} />

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { useAppSelector } from '../../app/hooks';
 
 import { useAreaHandler } from '../../hooks/useAreaHandler';
+import { useWidthHandler } from '../../hooks/useWidthHandler';
 
 import Burger from '../Burger/Burger';
 
@@ -27,23 +28,12 @@ const NavLayout: React.FC<propTypes> = ({ role }) => {
 
     const { isBurgerVisible } = useAppSelector(state => state.headerSlice);
 
-    const [width, setWidth] = useState<number>(window.innerWidth);
-    const [breakpoint] = useState<number>(768);
-
     const { refEl, isVisible, setVisibleStatus } = useAreaHandler({ initialStatus: true });
-
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-
-        window.addEventListener('resize', handleWindowResize);
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
+    const { isTabletWidth } = useWidthHandler();
 
     return (
         <>
-            {width <= breakpoint ?
+            {isTabletWidth ?
                 <>
                     {role === 'page-nav' ?
                         <Burger
