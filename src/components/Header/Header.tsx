@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { FaHamburger } from 'react-icons/fa';
 
@@ -7,11 +7,13 @@ import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { switchBurgerVisibleStatus } from '../../app/slices/headerSlice';
 
 import { useWidthHandler } from '../../hooks/useWidthHandler';
+import { useAreaHandler } from '../../hooks/useAreaHandler';
 
 import logo from '../../assets/images/logo.svg';
 
 import SectionInfo from '../SectionInfo/SectionInfo';
 import NavLayout from '../Nav/NavLayout';
+import Burger from '../Burger/Burger';
 
 import './header.scss';
 
@@ -20,10 +22,22 @@ import './header.scss';
 const Header: React.FC = () => {
 
     const { isBurgerVisible } = useAppSelector(state => state.headerSlice);
+    const [burgerStyles, setBurgerStyles] = useState<{ [key: string]: number | string }>({
+        height: 0,
+        zIndex: -1
+    });
 
     const { isTabletWidth } = useWidthHandler();
 
+    const { refEl, isVisible, setVisibleStatus } = useAreaHandler({ initialStatus: true });
+
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        isBurgerVisible && isTabletWidth
+            ? setBurgerStyles({ height: `${100}%`, zIndex: 5 })
+            : setBurgerStyles({ height: 0 });
+    }, [isBurgerVisible, isTabletWidth]);
 
     return (
         <header className="header">
@@ -36,6 +50,19 @@ const Header: React.FC = () => {
                             <FaHamburger size={24} />
                         </button>}
                 </>
+
+                <div className="header__burger"
+                    style={burgerStyles}
+                >
+                    <Burger
+                        role={'page-nav'}
+                        burgerRef={refEl}
+                        isBurgerVisible={isVisible}
+                        setBurgerVisibleStatus={setVisibleStatus}
+                        isGLBurgerVisible={isBurgerVisible}
+                        isTabletWidth={isTabletWidth}
+                    />
+                </div>
 
                 <div className="header__bar">
                     <a className="header__logo" href="#">

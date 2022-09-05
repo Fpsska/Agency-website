@@ -1,13 +1,35 @@
 .burger {
-    transition: all .35s linear;
+    // width: 100%;
+    height: 100%;
+
     &__wrapper {
         height: 100%;
     }
-    &__button  {
+
+    &__button {
         padding: 10px;
         background-color: transparent;
         position: absolute;
         top: 0;
         right: 0;
+    }
+
+    .nav {
+        background-color: rgba($color: #000000, $alpha: .55);
+        height: 100%;
+        // width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 20px 40px;
+
+        &__menu {
+            flex-direction: column;
+            align-items: flex-start;
+
+            :not(:last-child) {
+                margin: 0 0 10px 0;
+            }
+        }
     }
 }

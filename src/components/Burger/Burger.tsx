@@ -17,7 +17,8 @@ interface propTypes {
     burgerRef: string,
     isBurgerVisible: boolean,
     setBurgerVisibleStatus: (arg: boolean) => void,
-    isGLBurgerVisible: boolean
+    isGLBurgerVisible: boolean,
+    isTabletWidth: boolean
 }
 
 // /. interfaces
@@ -33,6 +34,7 @@ const Burger: React.FC<propTypes> = (props) => {
     } = props;
 
     const dispatch = useAppDispatch();
+
 
     useEffect(() => {
         isGLBurgerVisible
@@ -50,20 +52,16 @@ const Burger: React.FC<propTypes> = (props) => {
     };
 
     return (
-        <>
-            {isBurgerVisible &&
-                <div className="burger" ref={burgerRef}>
-                    <div className="burger__wrapper">
-                        <button className="burger__button" onClick={(e) => closeBurger(e)}>
-                            <CgCloseR size={18} color={'#fff'} />
-                        </button>
-                        <Nav
-                            role={role}
-                        />
-                    </div>
-                </div>
-            }
-        </>
+        <div className="burger" ref={burgerRef}>
+            <div className="burger__wrapper">
+                <button className="burger__button" onClick={(e) => closeBurger(e)}>
+                    <CgCloseR size={18} color={'#fff'} />
+                </button>
+                <Nav
+                    role={role}
+                />
+            </div>
+        </div>
     );
 };
 
