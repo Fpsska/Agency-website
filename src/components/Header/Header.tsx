@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { FaHamburger } from 'react-icons/fa';
 
@@ -26,12 +26,16 @@ const Header: React.FC = () => {
         height: 0,
         zIndex: -1
     });
+    const [isScrollENDpoint, setScrollENDpointStatus] = useState<boolean>(false);
 
     const { isTabletWidth } = useWidthHandler();
 
     const { refEl, isVisible, setVisibleStatus } = useAreaHandler({ initialStatus: true });
 
+    const headerRef = useRef<HTMLDivElement>(null!);
+
     const dispatch = useAppDispatch();
+
 
     useEffect(() => {
         isBurgerVisible && isTabletWidth
@@ -39,15 +43,36 @@ const Header: React.FC = () => {
             : setBurgerStyles({ height: 0 });
     }, [isBurgerVisible, isTabletWidth]);
 
+    useEffect(() => {
+        const onScrollHandler = (): void => {
+            const { height } = window.getComputedStyle(headerRef.current);
+
+            if (window.scrollY > parseInt(height, 10)) {
+                setScrollENDpointStatus(true);
+            } else {
+                setScrollENDpointStatus(false);
+            }
+        };
+
+        window.addEventListener('scroll', onScrollHandler);
+        return () => {
+            window.removeEventListener('scroll', onScrollHandler);
+        };
+    }, []);
+
     return (
-        <header className="header">
+        <header className="header" ref={headerRef}>
             <section className="header__wrapper">
 
                 <>
                     {!isBurgerVisible && isTabletWidth &&
                         <button className="header__button header__button--burger"
                             onClick={() => dispatch(switchBurgerVisibleStatus({ status: true }))}>
-                            <FaHamburger size={24} />
+                            <FaHamburger
+                                size={24}
+                                color={isScrollENDpoint ? '#000' : '#fff'}
+                                style={isScrollENDpoint ? { transform: 'rotate(180deg)' } : { transform: 'rotate(0)' }}
+                            />
                         </button>}
                 </>
 
