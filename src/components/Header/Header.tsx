@@ -76,9 +76,7 @@ const Header: React.FC = () => {
                         </button>}
                 </>
 
-                <div className="header__burger"
-                    style={burgerStyles}
-                >
+                <div className="header__burger" style={burgerStyles}>
                     <Burger
                         role={'page-nav'}
                         burgerRef={refEl}
@@ -89,13 +87,17 @@ const Header: React.FC = () => {
                     />
                 </div>
 
-                <div className="header__bar">
+                <div className="header__bar">   
                     <a className="header__logo" href="#">
                         <img className="header__image" src={logo} alt="logo" />
                         <h2 className="header__title">Agency</h2>
                     </a>
 
-                    <NavLayout role={'page-nav'} />
+                    <>
+                        {!isBurgerVisible && !isTabletWidth &&
+                            <NavLayout role={'page-nav'} />
+                        }
+                    </>
 
                     <div className="header__contacts">
                         <button className="header__button header__button--contacts">CONTACT</button>
