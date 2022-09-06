@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Jupiter-Task/static/css/main.c3e156ad.css",
-    "main.js": "/Jupiter-Task/static/js/main.d89310a8.js",
+    "main.css": "/Jupiter-Task/static/css/main.6c0b101f.css",
+    "main.js": "/Jupiter-Task/static/js/main.5e18ca51.js",
     "static/css/960.1ba858df.chunk.css": "/Jupiter-Task/static/css/960.1ba858df.chunk.css",
     "static/js/960.39a9f227.chunk.js": "/Jupiter-Task/static/js/960.39a9f227.chunk.js",
     "static/js/583.c4edf91c.chunk.js": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js",
@@ -11,8 +11,8 @@
     "static/js/651.284db88d.chunk.js": "/Jupiter-Task/static/js/651.284db88d.chunk.js",
     "index.html": "/Jupiter-Task/index.html",
     "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
-    "main.c3e156ad.css.map": "/Jupiter-Task/static/css/main.c3e156ad.css.map",
-    "main.d89310a8.js.map": "/Jupiter-Task/static/js/main.d89310a8.js.map",
+    "main.6c0b101f.css.map": "/Jupiter-Task/static/css/main.6c0b101f.css.map",
+    "main.5e18ca51.js.map": "/Jupiter-Task/static/js/main.5e18ca51.js.map",
     "960.1ba858df.chunk.css.map": "/Jupiter-Task/static/css/960.1ba858df.chunk.css.map",
     "960.39a9f227.chunk.js.map": "/Jupiter-Task/static/js/960.39a9f227.chunk.js.map",
     "583.c4edf91c.chunk.js.map": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js.map",
@@ -22,7 +22,7 @@
     "651.284db88d.chunk.js.map": "/Jupiter-Task/static/js/651.284db88d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3e156ad.css",
-    "static/js/main.d89310a8.js"
+    "static/css/main.6c0b101f.css",
+    "static/js/main.5e18ca51.js"
   ]
 }
