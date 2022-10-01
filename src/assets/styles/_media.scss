@@ -9,8 +9,8 @@
         flex-wrap: wrap;
     }
 
-    .gallery .gallery__photos {
-        grid-template-columns: 1fr 1fr;
+    .gallery__photos .gallery__card {
+        grid-column: 4 span;
     }
 }
 
@@ -30,6 +30,10 @@
     .header__contacts {
         justify-content: center;
     }
+
+    .gallery .gallery__photos {
+        grid-template-columns: repeat(8, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -48,9 +52,11 @@
     .gallery .gallery__wrapper {
         padding: 0 0 70px 0;
     }
+}
 
+@media screen and (max-width: 700px) {
     .gallery .gallery__photos {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -69,10 +75,6 @@
 
     .card__information {
         margin: 10px 10px 45px 20px;
-    }
-
-    .gallery .gallery__photos {
-        grid-template-columns: 100%;
     }
 
     .blog-page__wrapper,

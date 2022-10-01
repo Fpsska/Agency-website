@@ -24,8 +24,12 @@
 
     &__photos {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-gap: 30px;
+    }
+
+    &__card {
+        grid-column: 4 span;
     }
 
     &__button {
@@ -91,11 +95,19 @@
     align-items: flex-end;
     height: 415px;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    &__image {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     &__information {
+        z-index: 2;
         margin: 10px 10px 50px 50px;
         display: flex;
         align-items: flex-start;
@@ -113,11 +125,10 @@
         color: #000;
         font-size: 14px;
         padding: 10px 15px;
-        transform: scale(1);
-        transition: transform 0.2s linear;
+        transition: all 0.2s linear;
 
         &:hover {
-            transform: scale(1.05);
+            color: #16cd53;
         }
     }
 

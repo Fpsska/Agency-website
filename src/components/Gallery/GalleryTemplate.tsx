@@ -16,7 +16,8 @@ interface propTypes {
     id: string,
     category: string,
     text: string,
-    image?: string,
+    image: string,
+    alt_description: string,
     isActive: boolean
 }
 
@@ -29,8 +30,11 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
         category,
         text,
         image,
+        alt_description,
         isActive
     } = props;
+
+    console.log(alt_description)
 
     const dispatch = useAppDispatch();
 
@@ -58,10 +62,8 @@ const GalleryTemplate: React.FC<propTypes> = (props) => {
     }, [isActive]);
 
     return (
-        <div className={`gallery__card card ${isActive ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={cardHandler}
-        >
+        <div className={`gallery__card card ${isActive ? 'active' : ''}`} onClick={cardHandler}>
+            <img className="card__image" src={image} alt={alt_description} />
             <div className="card__information">
                 <span className="card__category"
                     onClick={cardCategoryHandler}

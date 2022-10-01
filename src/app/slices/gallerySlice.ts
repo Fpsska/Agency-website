@@ -116,6 +116,7 @@ const gallerySlice = createSlice({
                         ]),
                         text: item.description ?? 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                         image: item.urls.regular ?? placeholder_image,
+                        alt_description: item.alt_description ?? 'some content image',
                         isActive: false
                     }
                 );

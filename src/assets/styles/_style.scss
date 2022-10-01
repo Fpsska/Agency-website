@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -41,6 +43,12 @@ select {
 blockquote {
     margin: 0;
     padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 // /. NULL-STYLES
