@@ -3,8 +3,10 @@ export function filter(array: any[], category: string): any[] {
         case 'all':
             return array;
         case category:
-            return array.filter((item: any) => item.category.toLocaleLowerCase() === category);
+            return array.filter(
+                (item: any) => item.category.toLocaleLowerCase() === category
+            );
         default:
             return array;
     }
-};
+}

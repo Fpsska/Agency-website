@@ -1,19 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+// /. imports
+
 interface propTypes {
-    initialStatus: boolean
+    initialStatus: boolean;
 }
 
-export function useAreaHandler({ initialStatus }: propTypes): any {
+// /. interfaces
 
+export function useAreaHandler({ initialStatus }: propTypes): any {
     const [isVisible, setVisibleStatus] = useState<boolean>(initialStatus);
 
     const refEl = useRef<HTMLDivElement>(null!);
 
-
     useEffect(() => {
         const areaHandler = (e: any) => {
-            if (isVisible && refEl.current && !refEl.current.contains(e.target)) {
+            if (
+                isVisible &&
+                refEl.current &&
+                !refEl.current.contains(e.target)
+            ) {
                 setVisibleStatus(false);
             }
             // refEl.current => HTML-el !== null/undefined
@@ -35,4 +41,4 @@ export function useAreaHandler({ initialStatus }: propTypes): any {
     }, [isVisible]);
 
     return { refEl, isVisible, setVisibleStatus };
-};
+}

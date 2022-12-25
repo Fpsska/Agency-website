@@ -5,8 +5,8 @@ import { headerNavTemplatesTypes } from '../../Types/headerSliceTypes';
 // /. imports
 
 interface headerSliceState {
-    headerNavTemplates: headerNavTemplatesTypes[],
-    isBurgerVisible: boolean
+    headerNavTemplates: headerNavTemplatesTypes[];
+    isBurgerVisible: boolean;
 }
 
 // /. interfaces
@@ -47,15 +47,16 @@ const headerSlice = createSlice({
     name: 'headerSlice',
     initialState,
     reducers: {
-        switchBurgerVisibleStatus(state, action: PayloadAction<{ status: boolean }>) {
+        switchBurgerVisibleStatus(
+            state,
+            action: PayloadAction<{ status: boolean }>
+        ) {
             const { status } = action.payload;
             state.isBurgerVisible = status;
         }
     }
 });
 
-export const {
-    switchBurgerVisibleStatus
-} = headerSlice.actions;
+export const { switchBurgerVisibleStatus } = headerSlice.actions;
 
 export default headerSlice.reducer;

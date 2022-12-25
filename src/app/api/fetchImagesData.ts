@@ -5,7 +5,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchImagesData = createAsyncThunk(
     'gallerySlice/fetchImagesData',
     async (_, { rejectWithValue }) => {
-
         const pageNumber = Math.floor(Math.random() * (10 - 1)) + 1;
         const URL = `https://api.unsplash.com/search/photos/?client_id=7qBZMJtsb638mTv6UpQozhM0hW0dTxCWY-vSSvcJAHQ&query=content_filter=high&orientation=portrait&page=${pageNumber}`;
 
@@ -18,7 +17,6 @@ export const fetchImagesData = createAsyncThunk(
             const data = await response.json();
 
             return data.results;
-
         } catch (err: any) {
             return rejectWithValue(err.message);
         }

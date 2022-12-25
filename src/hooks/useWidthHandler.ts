@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export function useWidthHandler(): { isTabletWidth: boolean } {
+// /. imports
 
+export function useWidthHandler(): { isTabletWidth: boolean } {
     const [width, setWidth] = useState<number>(window.innerWidth);
     const [breakpoint] = useState<number>(768);
     const [isTabletWidth, setTabletWidth] = useState<boolean>(false);
@@ -20,4 +21,4 @@ export function useWidthHandler(): { isTabletWidth: boolean } {
     }, [width, breakpoint]);
 
     return { isTabletWidth };
-};
+}

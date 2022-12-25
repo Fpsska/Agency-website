@@ -14,11 +14,13 @@ import reportWebVitals from './reportWebVitals';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+// /. variables
+
 root.render(
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+        <Provider store={store}>
+            <App />
+        </Provider>
     </BrowserRouter>
 );
 

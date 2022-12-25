@@ -13,18 +13,17 @@ import './burger.scss';
 // /. imports
 
 interface propTypes {
-    role: string,
-    burgerRef: string,
-    isBurgerVisible: boolean,
-    setBurgerVisibleStatus: (arg: boolean) => void,
-    isGLBurgerVisible: boolean,
-    isTabletWidth: boolean
+    role: string;
+    burgerRef: string;
+    isBurgerVisible: boolean;
+    setBurgerVisibleStatus: (arg: boolean) => void;
+    isGLBurgerVisible: boolean;
+    isTabletWidth: boolean;
 }
 
 // /. interfaces
 
-const Burger: React.FC<propTypes> = (props) => {
-
+const Burger: React.FC<propTypes> = props => {
     const {
         role,
         burgerRef,
@@ -35,6 +34,14 @@ const Burger: React.FC<propTypes> = (props) => {
 
     const dispatch = useAppDispatch();
 
+    // /. hooks
+
+    const closeBurger = (e: any): void => {
+        e.stopPropagation();
+        dispatch(switchBurgerVisibleStatus({ status: false }));
+    };
+
+    // /. functions
 
     useEffect(() => {
         isGLBurgerVisible
@@ -43,23 +50,28 @@ const Burger: React.FC<propTypes> = (props) => {
     }, [isGLBurgerVisible]);
 
     useEffect(() => {
-        !isBurgerVisible && dispatch(switchBurgerVisibleStatus({ status: false }));
+        !isBurgerVisible &&
+            dispatch(switchBurgerVisibleStatus({ status: false }));
     }, [isBurgerVisible]);
 
-    const closeBurger = (e: any): void => {
-        e.stopPropagation();
-        dispatch(switchBurgerVisibleStatus({ status: false }));
-    };
+    // /. effects
 
     return (
-        <div className="burger" ref={burgerRef}>
+        <div
+            className="burger"
+            ref={burgerRef}
+        >
             <div className="burger__wrapper">
-                <button className="burger__button" onClick={(e) => closeBurger(e)}>
-                    <CgCloseR size={18} color={'#fff'} />
+                <button
+                    className="burger__button"
+                    onClick={e => closeBurger(e)}
+                >
+                    <CgCloseR
+                        size={18}
+                        color={'#fff'}
+                    />
                 </button>
-                <Nav
-                    role={role}
-                />
+                <Nav role={role} />
             </div>
         </div>
     );

@@ -13,12 +13,15 @@ import { fetchImagesData } from '../../../app/api/fetchImagesData';
 // /. imports
 
 const Layout: React.FC = () => {
-
     const dispatch = useAppDispatch();
+
+    // /. hooks
 
     useEffect(() => {
         dispatch(fetchImagesData());
     }, []);
+
+    // /. effects
 
     return (
         <div className="page">
@@ -33,5 +36,3 @@ const Layout: React.FC = () => {
 };
 
 export default Layout;
-
-

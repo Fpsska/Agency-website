@@ -10,34 +10,31 @@ import NavSelect from './NavSelect';
 // /. imports
 
 interface propTypes {
-    role: string
+    role: string;
 }
 
 // /. interfaces
 
 const NavLayout: React.FC<propTypes> = ({ role }) => {
-
-    const {
-        SelectDefaultValue,
-        isDataLoading,
-        error
-    } = useAppSelector(state => state.gallerySlice);
+    const { SelectDefaultValue, isDataLoading, error } = useAppSelector(
+        state => state.gallerySlice
+    );
 
     const { isTabletWidth } = useWidthHandler();
 
+    // /. hooks
+
     return (
         <>
-            {isTabletWidth ?
+            {isTabletWidth ? (
                 <NavSelect
                     SelectDefaultValue={SelectDefaultValue}
                     isDataLoading={isDataLoading}
                     error={error}
                 />
-                :
-                <Nav
-                    role={role}
-                />
-            }
+            ) : (
+                <Nav role={role} />
+            )}
         </>
     );
 };

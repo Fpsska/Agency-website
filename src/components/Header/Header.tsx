@@ -20,22 +20,25 @@ import './header.scss';
 // /. imports
 
 const Header: React.FC = () => {
-
     const { isBurgerVisible } = useAppSelector(state => state.headerSlice);
-    const [burgerStyles, setBurgerStyles] = useState<{ [key: string]: number | string }>({
+    const [burgerStyles, setBurgerStyles] = useState<{
+        [key: string]: number | string;
+    }>({
         height: 0,
         zIndex: -1
     });
-    const [isScrollENDpoint, setScrollENDpointStatus] = useState<boolean>(false);
+    const [isScrollENDpoint, setScrollENDpointStatus] =
+        useState<boolean>(false);
 
     const { isTabletWidth } = useWidthHandler();
 
-    const { refEl, isVisible, setVisibleStatus } = useAreaHandler({ initialStatus: true });
+    const { refEl, isVisible, setVisibleStatus } = useAreaHandler({
+        initialStatus: true
+    });
 
     const headerRef = useRef<HTMLDivElement>(null!);
 
     const dispatch = useAppDispatch();
-
 
     useEffect(() => {
         isBurgerVisible && isTabletWidth
@@ -61,22 +64,38 @@ const Header: React.FC = () => {
     }, []);
 
     return (
-        <header className="header" ref={headerRef}>
+        <header
+            className="header"
+            ref={headerRef}
+        >
             <section className="header__wrapper">
-
                 <>
-                    {!isBurgerVisible && isTabletWidth &&
-                        <button className="header__button header__button--burger"
-                            onClick={() => dispatch(switchBurgerVisibleStatus({ status: true }))}>
+                    {!isBurgerVisible && isTabletWidth && (
+                        <button
+                            className="header__button header__button--burger"
+                            onClick={() =>
+                                dispatch(
+                                    switchBurgerVisibleStatus({ status: true })
+                                )
+                            }
+                        >
                             <FaHamburger
                                 size={24}
                                 color={isScrollENDpoint ? '#000' : '#fff'}
-                                style={isScrollENDpoint ? { transform: 'rotate(180deg)' } : { transform: 'rotate(0)' }}
+                                style={
+                                    isScrollENDpoint
+                                        ? { transform: 'rotate(180deg)' }
+                                        : { transform: 'rotate(0)' }
+                                }
                             />
-                        </button>}
+                        </button>
+                    )}
                 </>
 
-                <div className="header__burger" style={burgerStyles}>
+                <div
+                    className="header__burger"
+                    style={burgerStyles}
+                >
                     <Burger
                         role={'page-nav'}
                         burgerRef={refEl}
@@ -87,25 +106,33 @@ const Header: React.FC = () => {
                     />
                 </div>
 
-                <div className="header__bar">   
-                    <a className="header__logo" href="#">
-                        <img className="header__image" src={logo} alt="logo" />
+                <div className="header__bar">
+                    <a
+                        className="header__logo"
+                        href="#"
+                    >
+                        <img
+                            className="header__image"
+                            src={logo}
+                            alt="logo"
+                        />
                         <h2 className="header__title">Agency</h2>
                     </a>
 
                     <>
-                        {!isBurgerVisible && !isTabletWidth &&
+                        {!isBurgerVisible && !isTabletWidth && (
                             <NavLayout role={'page-nav'} />
-                        }
+                        )}
                     </>
 
                     <div className="header__contacts">
-                        <button className="header__button header__button--contacts">CONTACT</button>
+                        <button className="header__button header__button--contacts">
+                            CONTACT
+                        </button>
                     </div>
                 </div>
 
                 <SectionInfo />
-
             </section>
         </header>
     );

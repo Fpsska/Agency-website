@@ -15,11 +15,15 @@ import './gallery.scss';
 // /. imports
 
 const Gallery: React.FC = () => {
-
-    const { galleryCards, isDataLoading, error, filterBy } = useAppSelector(state => state.gallerySlice);
+    const { galleryCards, isDataLoading, error, filterBy } = useAppSelector(
+        state => state.gallerySlice
+    );
 
     const [emptyStatus, setEmptyStatus] = useState<boolean>(false);
-    const [currentData, setCurrentData] = useState<galleryCardsTypes[]>(galleryCards);
+    const [currentData, setCurrentData] =
+        useState<galleryCardsTypes[]>(galleryCards);
+
+    // /. hooks
 
     useEffect(() => {
         currentData.length === 0 ? setEmptyStatus(true) : setEmptyStatus(false);
@@ -29,13 +33,15 @@ const Gallery: React.FC = () => {
         setCurrentData(filter(galleryCards, filterBy));
     }, [filterBy, galleryCards]);
 
+    // /. effects
+
     return (
         <>
-            {isDataLoading ?
+            {isDataLoading ? (
                 <div className="gallery__preloader">
                     <Preloader />
                 </div>
-                :
+            ) : (
                 <div className="gallery__photos">
                     {currentData.map(item => {
                         return (
@@ -46,13 +52,13 @@ const Gallery: React.FC = () => {
                         );
                     })}
                 </div>
-            }
-            {
-                !isDataLoading && error && <h3 className="error">Error: {error}</h3>
-            }
-            {
-                !isDataLoading && !error && emptyStatus && <h3 className="gallery__message">no matches</h3>
-            }
+            )}
+            {!isDataLoading && error && (
+                <h3 className="error">Error: {error}</h3>
+            )}
+            {!isDataLoading && !error && emptyStatus && (
+                <h3 className="gallery__message">no matches</h3>
+            )}
         </>
     );
 };

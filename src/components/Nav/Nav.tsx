@@ -9,19 +9,22 @@ import './nav.scss';
 // /. imports
 
 interface propTypes {
-    role: string
+    role: string;
 }
 
 // /. interfaces
 
-const Nav: React.FC<propTypes> = (props) => {
-
+const Nav: React.FC<propTypes> = props => {
     const { role } = props;
 
-    const { isDataLoading, error, galleryNavTemplate } = useAppSelector(state => state.gallerySlice);
+    const { isDataLoading, error, galleryNavTemplate } = useAppSelector(
+        state => state.gallerySlice
+    );
     const { headerNavTemplates } = useAppSelector(state => state.headerSlice);
 
     const [currentData, setCurrentData] = useState<any[]>([]);
+
+    // /. hooks
 
     useEffect(() => {
         switch (role) {
@@ -34,6 +37,8 @@ const Nav: React.FC<propTypes> = (props) => {
         }
     }, [role, headerNavTemplates, galleryNavTemplate]);
 
+    // /. effects
+
     return (
         <nav className={role === 'gallery-nav' ? 'gallery__nav nav' : 'nav'}>
             <ul className="nav__menu">
@@ -42,7 +47,6 @@ const Nav: React.FC<propTypes> = (props) => {
                         <NavTemplate
                             key={item.id}
                             {...item}
-
                             role={role}
                             isDataLoading={isDataLoading}
                             error={error}
