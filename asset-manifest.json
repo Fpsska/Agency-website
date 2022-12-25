@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/Jupiter-Task/static/css/main.d42ed790.css",
-    "main.js": "/Jupiter-Task/static/js/main.d745ea48.js",
-    "static/css/960.3996d8be.chunk.css": "/Jupiter-Task/static/css/960.3996d8be.chunk.css",
-    "static/js/960.eb6a6d05.chunk.js": "/Jupiter-Task/static/js/960.eb6a6d05.chunk.js",
+    "main.css": "/Jupiter-Task/static/css/main.2473d1ac.css",
+    "main.js": "/Jupiter-Task/static/js/main.3e5b39d2.js",
+    "static/css/960.30660140.chunk.css": "/Jupiter-Task/static/css/960.30660140.chunk.css",
+    "static/js/960.b2b2b0bc.chunk.js": "/Jupiter-Task/static/js/960.b2b2b0bc.chunk.js",
     "static/js/583.c4edf91c.chunk.js": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js",
     "static/js/708.302964e6.chunk.js": "/Jupiter-Task/static/js/708.302964e6.chunk.js",
     "static/js/923.bd819b07.chunk.js": "/Jupiter-Task/static/js/923.bd819b07.chunk.js",
@@ -11,10 +11,10 @@
     "static/js/651.284db88d.chunk.js": "/Jupiter-Task/static/js/651.284db88d.chunk.js",
     "index.html": "/Jupiter-Task/index.html",
     "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
-    "main.d42ed790.css.map": "/Jupiter-Task/static/css/main.d42ed790.css.map",
-    "main.d745ea48.js.map": "/Jupiter-Task/static/js/main.d745ea48.js.map",
-    "960.3996d8be.chunk.css.map": "/Jupiter-Task/static/css/960.3996d8be.chunk.css.map",
-    "960.eb6a6d05.chunk.js.map": "/Jupiter-Task/static/js/960.eb6a6d05.chunk.js.map",
+    "main.2473d1ac.css.map": "/Jupiter-Task/static/css/main.2473d1ac.css.map",
+    "main.3e5b39d2.js.map": "/Jupiter-Task/static/js/main.3e5b39d2.js.map",
+    "960.30660140.chunk.css.map": "/Jupiter-Task/static/css/960.30660140.chunk.css.map",
+    "960.b2b2b0bc.chunk.js.map": "/Jupiter-Task/static/js/960.b2b2b0bc.chunk.js.map",
     "583.c4edf91c.chunk.js.map": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js.map",
     "708.302964e6.chunk.js.map": "/Jupiter-Task/static/js/708.302964e6.chunk.js.map",
     "923.bd819b07.chunk.js.map": "/Jupiter-Task/static/js/923.bd819b07.chunk.js.map",
@@ -22,7 +22,7 @@
     "651.284db88d.chunk.js.map": "/Jupiter-Task/static/js/651.284db88d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d42ed790.css",
-    "static/js/main.d745ea48.js"
+    "static/css/main.2473d1ac.css",
+    "static/js/main.3e5b39d2.js"
   ]
 }
