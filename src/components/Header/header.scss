@@ -14,28 +14,6 @@
         margin: 0 0 60px 0;
     }
 
-    &__logo {
-        display: flex;
-        align-items: center;
-
-        :not(:last-child) {
-            margin: 0 20px 0 0;
-        }
-    }
-
-    &__image {
-        height: 44px;
-        width: 46px;
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
-
-    &__title {
-        font-size: 24px;
-        font-weight: 600;
-        color: #fff;
-    }
-
     &__contacts {
         display: flex;
         align-items: center;

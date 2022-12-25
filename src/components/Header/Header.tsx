@@ -40,6 +40,8 @@ const Header: React.FC = () => {
 
     const dispatch = useAppDispatch();
 
+    // /. hooks
+
     useEffect(() => {
         isBurgerVisible && isTabletWidth
             ? setBurgerStyles({ height: `${100}%`, zIndex: 5 })
@@ -62,6 +64,8 @@ const Header: React.FC = () => {
             window.removeEventListener('scroll', onScrollHandler);
         };
     }, []);
+
+    // /. effects
 
     return (
         <header
@@ -108,15 +112,16 @@ const Header: React.FC = () => {
 
                 <div className="header__bar">
                     <a
-                        className="header__logo"
+                        className="header__logo logo"
                         href="#"
                     >
-                        <img
-                            className="header__image"
-                            src={logo}
-                            alt="logo"
-                        />
-                        <h2 className="header__title">Agency</h2>
+                        <div className="logo__image">
+                            <img
+                                src={logo}
+                                alt="logo"
+                            />
+                        </div>
+                        <span className="logo__title">Agency</span>
                     </a>
 
                     <>
