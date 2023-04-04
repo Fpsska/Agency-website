@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjupiter_task=self.webpackChunkjupiter_task||[]).push([[583],{583:function(e,s,a){a.r(s);a(791);var r=a(651),c=a(184);s.default=function(){return(0,c.jsx)("section",{className:"services-page",children:(0,c.jsxs)("div",{className:"services-page__wrapper",children:[(0,c.jsx)("p",{className:"message",children:"Services Page in progress"}),(0,c.jsx)(r.tcg,{size:"42px"})]})})}}}]);
-//# sourceMappingURL=583.c4edf91c.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjupiter_task=self.webpackChunkjupiter_task||[]).push([[923],{923:function(e,s,a){a.r(s);a(791);var r=a(651),c=a(184);s.default=function(){return(0,c.jsx)("section",{className:"blog-page",children:(0,c.jsxs)("div",{className:"blog-page__wrapper",children:[(0,c.jsx)("p",{className:"message",children:"Blog Page in progress"}),(0,c.jsx)(r.tcg,{size:"42px"})]})})}}}]);
-//# sourceMappingURL=923.bd819b07.chunk.js.map

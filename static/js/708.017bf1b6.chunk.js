@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkagency_website=self.webpackChunkagency_website||[]).push([[708],{708:function(e,s,c){c.r(s);c(791);var i=c(651),a=c(184);s.default=function(){return(0,a.jsx)("section",{className:"pricing-page",children:(0,a.jsxs)("div",{className:"pricing-page__wrapper",children:[(0,a.jsx)("p",{className:"message",children:"Pricing Page in progress"}),(0,a.jsx)(i.tcg,{size:"42px"})]})})}}}]);
+//# sourceMappingURL=708.017bf1b6.chunk.js.map

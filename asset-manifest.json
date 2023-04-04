@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Jupiter-Task/static/css/main.2473d1ac.css",
-    "main.js": "/Jupiter-Task/static/js/main.3e5b39d2.js",
-    "static/css/960.30660140.chunk.css": "/Jupiter-Task/static/css/960.30660140.chunk.css",
-    "static/js/960.b2b2b0bc.chunk.js": "/Jupiter-Task/static/js/960.b2b2b0bc.chunk.js",
-    "static/js/583.c4edf91c.chunk.js": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js",
-    "static/js/708.302964e6.chunk.js": "/Jupiter-Task/static/js/708.302964e6.chunk.js",
-    "static/js/923.bd819b07.chunk.js": "/Jupiter-Task/static/js/923.bd819b07.chunk.js",
-    "static/js/787.fcee1894.chunk.js": "/Jupiter-Task/static/js/787.fcee1894.chunk.js",
-    "static/js/651.284db88d.chunk.js": "/Jupiter-Task/static/js/651.284db88d.chunk.js",
-    "index.html": "/Jupiter-Task/index.html",
-    "static/media/logo.svg": "/Jupiter-Task/static/media/logo.2c4f32cecaa108a760355ab41d857a7a.svg",
-    "main.2473d1ac.css.map": "/Jupiter-Task/static/css/main.2473d1ac.css.map",
-    "main.3e5b39d2.js.map": "/Jupiter-Task/static/js/main.3e5b39d2.js.map",
-    "960.30660140.chunk.css.map": "/Jupiter-Task/static/css/960.30660140.chunk.css.map",
-    "960.b2b2b0bc.chunk.js.map": "/Jupiter-Task/static/js/960.b2b2b0bc.chunk.js.map",
-    "583.c4edf91c.chunk.js.map": "/Jupiter-Task/static/js/583.c4edf91c.chunk.js.map",
-    "708.302964e6.chunk.js.map": "/Jupiter-Task/static/js/708.302964e6.chunk.js.map",
-    "923.bd819b07.chunk.js.map": "/Jupiter-Task/static/js/923.bd819b07.chunk.js.map",
-    "787.fcee1894.chunk.js.map": "/Jupiter-Task/static/js/787.fcee1894.chunk.js.map",
-    "651.284db88d.chunk.js.map": "/Jupiter-Task/static/js/651.284db88d.chunk.js.map"
+    "main.css": "/Agency-website/static/css/main.2473d1ac.css",
+    "main.js": "/Agency-website/static/js/main.046d0b9c.js",
+    "static/css/960.30660140.chunk.css": "/Agency-website/static/css/960.30660140.chunk.css",
+    "static/js/960.217479aa.chunk.js": "/Agency-website/static/js/960.217479aa.chunk.js",
+    "static/js/583.98d2f294.chunk.js": "/Agency-website/static/js/583.98d2f294.chunk.js",
+    "static/js/708.017bf1b6.chunk.js": "/Agency-website/static/js/708.017bf1b6.chunk.js",
+    "static/js/923.bad415cd.chunk.js": "/Agency-website/static/js/923.bad415cd.chunk.js",
+    "static/js/787.dc681047.chunk.js": "/Agency-website/static/js/787.dc681047.chunk.js",
+    "static/js/651.7c2d6be4.chunk.js": "/Agency-website/static/js/651.7c2d6be4.chunk.js",
+    "index.html": "/Agency-website/index.html",
+    "static/media/logo.svg": "/Agency-website/static/media/logo.00207252a46a2c712243c9908173ca32.svg",
+    "main.2473d1ac.css.map": "/Agency-website/static/css/main.2473d1ac.css.map",
+    "main.046d0b9c.js.map": "/Agency-website/static/js/main.046d0b9c.js.map",
+    "960.30660140.chunk.css.map": "/Agency-website/static/css/960.30660140.chunk.css.map",
+    "960.217479aa.chunk.js.map": "/Agency-website/static/js/960.217479aa.chunk.js.map",
+    "583.98d2f294.chunk.js.map": "/Agency-website/static/js/583.98d2f294.chunk.js.map",
+    "708.017bf1b6.chunk.js.map": "/Agency-website/static/js/708.017bf1b6.chunk.js.map",
+    "923.bad415cd.chunk.js.map": "/Agency-website/static/js/923.bad415cd.chunk.js.map",
+    "787.dc681047.chunk.js.map": "/Agency-website/static/js/787.dc681047.chunk.js.map",
+    "651.7c2d6be4.chunk.js.map": "/Agency-website/static/js/651.7c2d6be4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2473d1ac.css",
-    "static/js/main.3e5b39d2.js"
+    "static/js/main.046d0b9c.js"
   ]
 }
